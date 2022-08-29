@@ -209,9 +209,9 @@ header .top .top-right .profile{
     text-align: right;
 
 }
-.user-information
+.user-information p
 {
-    color: #ffffff;
+    color: #ffffff !important;
 }
  /* -------------------------- Menu Bar ---------------------- */
 
