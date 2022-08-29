@@ -1,0 +1,133 @@
+
+canvas#signature {
+  border: 2px solid black;
+}
+
+:root {
+  --Side-Bar-background-light: #f7faff;
+  --active-text-light: #816578;
+  --top-bar-light: #6941c6;
+  --btn-hover-light: #6941c6;
+  --bdy-background-light: #e9eaf5;
+  --text-light: #101828;
+  --link-hover-light: #e4e4f8;
+  --active-btn-light: #7a5a78;
+  --dash-card-light: #ffffff;
+  --btn-background-light: #7a5af8;
+  --btn-text: #ffffff;
+
+  --dash-card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --dash-card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--bdy-background-dark);
+}
+
+.Student-form .personalDetails .fields {
+  display: flex;
+}
+.Student-form .permanentAddress .fields {
+  display: flex;
+}
+.Student-form {
+  position: relative;
+  max-width: 1100px;
+  max-height: 500px;
+  margin: 30px;
+
+  width: 100%;
+  border-radius: 6px;
+  padding: 30px;
+  border-radius: var(--border-radius-1);
+  background-color: var(--dash-card-light);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+/* .Student-form header {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+}
+.Student-form header ::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 3px;
+  width: 27px;
+  border-radius: 8px;
+  
+} */
+.Student-form form {
+  position: relative;
+  margin-top: 16px;
+  max-height: 500px;
+  background: var(--dash-card-light);
+  overflow: hidden;
+}
+.Student-form form .form {
+  position: absolute;
+  background: var(--dash-card-light);
+  transition: 0.3s ease;
+}
+.Student-form form.secActive .form.first {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+}
+.Student-form .Student-form form .title {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+  color: var(--text-light);
+}
+.Student-form form .fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.Student-form span {
+  color: var(--text-light);
+}
+.Student-form form .fields .input-field {
+  display: flex;
+  width: calc(100% / 3 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+  background: var(--dash-card-light);
+}
+.Student-form .input-field label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+.Student-form .input-field input,
+select {
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-light);
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+.Student-form .input-field input :focus,
+.Student-form .input-field select:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+.Student-form .input-field select,
+.Student-form .input-field input[type="date"] {
+  color: var(--text-light);
+}
+.Student-form .input-field input[type="date"]:valid {
+  color: var(--text-light);
+}

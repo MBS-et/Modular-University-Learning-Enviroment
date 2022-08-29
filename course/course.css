@@ -1,0 +1,71 @@
+:root{
+    --Side-Bar-background-light: #f7faff ;
+    --active-text-light: #816578 ;
+    --top-bar-light: #6941c6;
+    --btn-hover-light: #6941c6 ;
+    --bdy-background-light: #e9eaf5 ;
+    --text-light: #101828;
+    --link-hover-light: #e4e4f8;
+    --active-btn-light: #7a5a78;
+    --dash-card-light:#ffffff;
+    --btn-background-light:#7a5af8;
+    --btn-text:#ffffff;
+ 
+    --dash-card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --dash-card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--bdy-background-dark);
+}
+
+
+[data-tab-content]
+{
+    display: none;
+}
+.active[data-tab-content]
+{
+    display: block;
+}
+.tabs
+{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--text-light);
+    color: var(--text-light);
+}
+.title
+{
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap:1.8rem;
+}
+.tab
+{
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0.5rem;
+    border-radius: var(--border-radius-1);
+    background: var(--btn-background-light);
+    color: var(--btn-text);
+    gap:1rem;
+}
+.tab:hover{
+  background: var(--btn-hover-light);
+}
+.tab.active
+{
+    background: var(--btn-hover-light);
+}
+
