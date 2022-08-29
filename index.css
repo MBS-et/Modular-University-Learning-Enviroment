@@ -209,6 +209,10 @@ header .top .top-right .profile{
     text-align: right;
 
 }
+header .top .top-right .profile .user-information
+{
+    color: #ffffff;
+}
  /* -------------------------- Menu Bar ---------------------- */
 
  aside .sidebar
