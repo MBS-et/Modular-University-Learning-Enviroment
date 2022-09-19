@@ -1,0 +1,191 @@
+:root{
+    --Side-Bar-background-light: #f7faff ;
+    --active-text-light: #816578 ;
+    --top-bar-light: #6941c6;
+    --btn-hover-light: #6941c6 ;
+    --bdy-background-light: #e9eaf5 ;
+    --text-light: #101828;
+    --link-hover-light: #e4e4f8;
+    --active-btn-light: #7a5a78;
+    --dash-card-light:#ffffff;
+    --btn-background-light:#7a5af8;
+    --btn-text:#ffffff;
+  
+    --dash-card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+  
+    --dash-card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+  
+    --box-shadow: 0 2rem 3rem var(--bdy-background-dark);
+  }
+.main-body
+  {
+    
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .cal {
+    display: flex;
+    width: 900px;
+    margin-top: 25px;
+    justify-content: center;
+    background-color: var(--dash-card-light);
+    border-radius: var(--border-radius-1);
+   
+  }
+  .cal button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--text-light);
+  }
+  
+  .cal #header {
+    padding: 10px;
+    color: var(--text-light);
+    font-size: 26px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .cal #header button {
+    background-color:var(--btn-background-light);
+    color: var(--btn-text);
+  }
+  .cal #header button:hover {
+    background-color:var(--btn-hover-light);
+  }
+  .cal #container {
+    width: 770px;
+    overflow-y: auto;
+    max-height: 900px;
+  }
+  .cal #weekdays {
+    width: 100%;
+    display: flex;
+    color: var(--text-light);
+    font-size: 1rem;
+  }
+  .cal #weekdays div {
+    width: 100px;
+    padding: 10px;
+  }
+  .cal #calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 350px;
+    overflow-y: auto;
+  }
+  .cal .day {
+    width: 90px;
+    padding: 10px;
+    height: 60px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: var(--dash-card-light);
+    margin: 5px;
+    border-radius: var(--border-radius-1);
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    color: var(--text-light);
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cal .day:hover {
+    background-color: var(--btn-hover-light);
+  }
+  
+  .cal .day + #currentDay {
+    background-color:var(--btn-background-light);
+  }
+  .cal .event {
+    font-size: 10px;
+    padding: 3px;
+    background-color: var(--dash-card-light);
+    color: var(--text-light);
+    border-radius: 5px;
+    max-height: 55px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  .cal .padding {
+    cursor: default !important;
+    background-color: var(--dash-card-light) !important;
+    box-shadow: none !important;
+  }
+  .cal #newEventModal, #deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    color: var(--text-light);
+    background-color: var(--dash-card-light);
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 350px;
+    top: 100px;
+    left: calc(50% - 175px);
+    position: absolute;
+    font-family: sans-serif;
+  }
+  #deleteEventModal
+  {
+    width: 500px;
+    
+  }
+  #eventText
+  {
+    max-width: 500px;
+    overflow-x: auto;
+  }
+  .cal #eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+  }
+  .cal #eventTitleInput.error {
+    border: 2px solid red;
+  }
+  .cal #cancelButton, #deleteButton {
+    background-color: var(--btn-background-light);
+    color: var(--btn-text);
+  }
+  
+  .cal #saveButton, #closeButton {
+    background-color: var(--btn-background-light);
+    color: var(--btn-text);
+  }
+  .cal #cancelButton:hover, #deleteButton:hover {
+    background-color: var(--btn-hover-light);
+  }
+  .cal #saveButton:hover, #closeButton:hover {
+    background-color: var(--btn-hover-light);
+  }
+  .cal #eventText {
+    font-size: 14px;
+  }
+  .cal #modalBackDrop {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+  }
+  
