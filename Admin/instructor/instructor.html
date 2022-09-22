@@ -13,6 +13,8 @@
     <!-- Main Body Css -->
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="./instructor.css" />
+    <link rel="stylesheet" href="./instructorForm.css" />
+    <link rel="stylesheet" href="./instructorViewTable.css" />
   </head>
   <body>
     <header>
@@ -93,10 +95,243 @@
           </ul>
           <div class="tab-content">
             <div id="add" data-tab-content class="active">
-              <h1>Add</h1>
+              <div class="Instructor-form">
+                <!-- instructor form conatiner -->
+                <h1>Instructor Registration Form</h1>
+                <form action="#">
+                  <div class="formFirst">
+                    <!-- 1st form conatiner -->
+                    <div class="personalDetails">
+                      <!-- personalDetails conatainer -->
+                      <span class="title">Personal Details</span>
+                      <div class="fields">
+                        <!-- fields for personal details -->
+                        <div class="input-field">
+                          <label>First Name</label>
+                          <input
+                            type="text"
+                            placeholder="Enter user's First Name"
+                            required
+                          />
+                        </div>
+                        <div class="input-field">
+                          <label>Middle Name</label>
+                          <input
+                            type="text"
+                            placeholder="Enter user's Middle Name"
+                            required
+                          />
+                        </div>
+                        <div class="input-field">
+                          <label>Last Name</label>
+                          <input
+                            type="text"
+                            placeholder="Enter user's Last Name"
+                            required
+                          />
+                        </div>
+                        <div class="input-field">
+                          <label>Gender</label>
+                          <select required>
+                            <option disabled selected>Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                          </select>
+                        </div>
+                        <div class="input-field">
+                          <label>Mobile Number</label>
+                          <input
+                            type="number"
+                            placeholder="Enter mobile number"
+                            required
+                          />
+                        </div>
+                        <div class="input-field"></div>
+                        <!-- fields for personal details -->
+                      </div>
+                      <!-- personalDetails conatainer -->
+                    </div>
+                    <div class="AccountDetails">
+                      <!-- AccountDetails conatainer -->
+                      <span class="title">Account Details</span>
+                      <div class="fields">
+                        <!-- field for acocunt details -->
+                        <div class="input-field">
+                          <label>Instructor ID</label>
+                          <input
+                            type="text"
+                            placeholder="Enter instructors ID"
+                          />
+                        </div>
+                        <div class="input-field">
+                          <label>User Name</label>
+                          <input
+                            type="text"
+                            placeholder="Enter The user's user name "
+                            required
+                          />
+                        </div>
+                        <div class="input-field">
+                          <label>Email</label>
+                          <input
+                            type="email"
+                            placeholder="www.example@gmail.com"
+                            required
+                          />
+                        </div>
+                        <div class="input-field">
+                          <label>Role</label>
+                          <input
+                            type="text"
+                            placeholder="enter user's role"
+                            required
+                          />
+                        </div>
+                        <div class="input-field">
+                          <label>Password</label>
+                          <input
+                            type="password"
+                            placeholder="Enter  user's Password "
+                            required
+                          />
+                        </div>
+                        <div class="input-field">
+                          <label>Confirm Password</label>
+                          <input
+                            type="password"
+                            placeholder="confirm user's password "
+                            required
+                          />
+                        </div>
+                        <div class="buttons">
+                          <button class="submit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-save"></i>
+                          </button>
+                        </div>
+                        <!-- field for acocunt details -->
+                      </div>
+                      <!-- AccountDetails conatainer -->
+                    </div>
+                    <!-- 1st form conatiner -->
+                  </div>
+                </form>
+                <!-- instructor form conatiner -->
+              </div>
             </div>
             <div id="view" data-tab-content>
-              <h1>View</h1>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>S No.</th>
+                      <th>Image</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Department</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>
+                        <img
+                        src=https://drive.google.com/uc?export=view&id=1qw3KUJnYgvnJHQP-yY13u_rXrJO8ZbL_
+                        />
+                      </td>
+                      <td>Rakhi Gupta</td>
+                      <td>rakhigupta@gmail.com</td>
+                      <td>Engineering</td>
+                      <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>
+                        <img
+                        src=https://drive.google.com/uc?export=view&id=1KV8Ob2wXIcobIvayGGDB1qUpQn_iZKIp
+                        />
+                      </td>
+                      <td>Anjali</td>
+                      <td>anjali@gmail.com</td>
+                      <td>Engineering</td>
+                      <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>
+                        <img
+                        src=https://drive.google.com/uc?export=view&id=1ock7haLmYaAbHe8yn9H8ZGgkaGY9lcB0
+                        />
+                      </td>
+                      <td>Vejata Gupta</td>
+                      <td>Vejata@gmail.com</td>
+                      <td>Engineering</td>
+                      <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>
+                        <img
+                        src=https://drive.google.com/uc?export=view&id=1MbkS3AwaCNaKfMTmCQMHD1okQEubCdnt
+                        />
+                      </td>
+                      <td>Shweta</td>
+                      <td>Shweta@gmail.com</td>
+                      <td>Engineering</td>
+                      <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>
+                        <img
+                        src=https://drive.google.com/uc?export=view&id=1oztRYJUSZ5txDbaAAGg0O8_Ek6nzLAId
+                        />
+                      </td>
+                      <td>Adarsh</td>
+                      <td>Adarsh@gmail.com</td>
+                      <td>Engineering</td>
+                      <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>
+                        <img
+                        src=https://drive.google.com/uc?export=view&id=1ysB5QChCSLpz3igUoDzalENFsjJEe8H7
+                        />
+                      </td>
+                      <td>Monti</td>
+                      <td>Monti@gmail.com</td>
+                      <td>Engineering</td>
+                      <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>
+                        <img
+                        src=https://drive.google.com/uc?export=view&id=1fCtvhYFy1roieanYeXua1jKJyfUhiDS6
+                        />
+                      </td>
+                      <td>Arpit</td>
+                      <td>Arpit@gmail.com</td>
+                      <td>Engineering</td>
+                      <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>
+                        <img
+                        src=https://drive.google.com/uc?export=view&id=1ZHPBm7fBxfbW2qV8pLTeDvMreXzqcW-x
+                        />
+                      </td>
+                      <td>Priya</td>
+                      <td>priya@gmail.com</td>
+                      <td>Engineering</td>
+                      <td><button>View</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
             <div id="assign" data-tab-content>
               <h1>Assign</h1>
