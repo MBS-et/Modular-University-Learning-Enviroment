@@ -201,6 +201,7 @@ aside a {
   display: flex;
   color: var(--text-light);
   margin-left: 2rem;
+  margin-bottom: 1rem;
   gap: 1rem;
   align-items: center;
   position: relative;
@@ -220,7 +221,7 @@ aside .sidebar a.active {
   color: var(--active-text-light);
   border: 2px solid var(--active-text-light);
   margin-left: 0;
-  margin-bottom: 2px;
+  margin-bottom: 1rem;
   border-radius: var(--border-radius-3);
 }
 
