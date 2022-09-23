@@ -1,3 +1,6 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 10, "opsz" 48;
+}
 :root {
   --Side-Bar-background-light: #f7faff;
   --active-text-light: #816578;
@@ -21,42 +24,33 @@
 
   --box-shadow: 0 2rem 3rem var(--bdy-background-dark);
 }
-.personalDetails .fields {
-  display: flex;
-}
-.AccountDetails .fields {
-  display: flex;
-  max-height: 150px;
-}
-/* .fields {
-  max-height: 100px;
-} */
 
-.Instructor-form {
+.Course-form .personalDetails .fields {
+  display: flex;
+}
+.Course-form .permanentAddress .fields {
+  display: flex;
+}
+.Course-form {
   position: relative;
-
+  max-width: 1100px;
+  max-height: 700px;
+  margin-left: 90px;
+  margin-top: 20px;
   width: 100%;
   border-radius: 6px;
   padding: 30px;
-  /* margin: 40px; */
   border-radius: var(--border-radius-1);
   background-color: var(--dash-card-light);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-
-  max-width: 1100px;
-  max-height: 590px;
-  margin-top: 20px;
-  margin-left: 90px;
-  /* overflow: hidden;
-  overflow-y: scroll; */
 }
-.Instructor-form header {
+/* .Course-form header {
   position: relative;
   font-size: 20px;
   font-weight: 600;
-  color: var(--text-light);
+  color: #101828;
 }
-.Instructor-form header ::before {
+.Course-form header ::before {
   content: "";
   position: absolute;
   left: 0;
@@ -64,27 +58,26 @@
   height: 3px;
   width: 27px;
   border-radius: 8px;
-  background-color: #6941c6;
-}
-.Instructor-form form {
+  
+} */
+.Course-form form {
   position: relative;
   margin-top: 16px;
-  min-height: 490px;
+  max-height: 500px;
   background: var(--dash-card-light);
-
   overflow: hidden;
 }
-.Instructor-form form .form {
+.Course-form form .form {
   position: absolute;
   background: var(--dash-card-light);
   transition: 0.3s ease;
 }
-form.secActive .form.first {
+.Course-form form.secActive .form.first {
   opacity: 0;
   pointer-events: none;
   transform: translateX(-100%);
 }
-.Instructor-form form .title {
+.Course-form .Course-form form .title {
   display: block;
   margin-bottom: 8px;
   font-size: 16px;
@@ -92,64 +85,65 @@ form.secActive .form.first {
   margin: 6px 0;
   color: var(--text-light);
 }
-.Instructor-form form .fields {
+.Course-form form .fields {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 5px 5px 5px 5px;
 }
-form .fields .input-field {
+.Course-form span {
+  color: var(--text-light);
+}
+.Course-form form .fields .input-field {
   display: flex;
   width: calc(100% / 3 - 15px);
   flex-direction: column;
   margin: 4px 0;
   background: var(--dash-card-light);
 }
-.input-field label {
+.Course-form .input-field label {
   font-size: 15px;
   font-weight: 500;
   color: var(--text-light);
 }
-.input-field input,
+.Course-form .input-field input,
 select {
   outline: none;
   font-size: 14px;
   font-weight: 400;
-  color:#333;
+  color: var(--text-light);
   border-radius: 5px;
   border: 1px solid #aaa;
   padding: 0 15px;
   height: 42px;
   margin: 8px 0;
 }
-.input-field input :focus,
-.input-field select:focus {
+.Course-form .input-field input :focus,
+.Course-form .input-field select:focus {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
 }
-.input-field select,
-.input-field input[type="date"] {
-  color: #333;
+.Course-form .input-field select,
+.Course-form .input-field input[type="date"] {
+  color: var(--text-light);
 }
-.input-field input[type="date"]:valid {
-  color:#333;
+.Course-form .input-field input[type="date"]:valid {
+  color: var(--text-light);
 }
-.Instructor-form .btnText {
+.Course-form .btnText {
   font-size: 14px;
   font-weight: 400;
 }
-.Instructor-form .buttons .submit {
+.Course-form .buttons .submit {
   display: flex;
   align-items: center;
-  margin: 10px;
+  justify-content: center;
 }
 .formFirst button i {
   margin: 0 6px;
   font-size: 20px;
 }
-.formFirst button {
-  margin: 0;
-}
-.Instructor-form form button {
+.Course-form form button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,7 +154,7 @@ select {
   outline: none;
   color: var(--btn-text);
   border-radius: 0.4rem;
-  margin: 25px 0;
+  margin: 5px 5px 5px 5px;
   background-color: var(--btn-background-light);
   transition: all 0.3s linear;
   cursor: pointer;

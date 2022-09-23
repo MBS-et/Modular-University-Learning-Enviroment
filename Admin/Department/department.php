@@ -12,8 +12,8 @@
     />
     <!-- Main Body Css -->
     <link rel="stylesheet" href="../index.css" />
-    <link rel="stylesheet" href="./course.css" />
-    <link rel="stylesheet" href="./courseForm.css" />
+    <link rel="stylesheet" href="./department.css" />
+    <link rel="stylesheet" href="./departmentForm.css" />
   </head>
   <body>
     <header>
@@ -49,6 +49,14 @@
             <span class="material-symbols-outlined">dashboard</span>
             <h3>Dashboard</h3>
           </a>
+          <a href="./department.php" id="Dep">
+                <span class="material-symbols-outlined">view_list</span>
+                <h3>Department</h3>
+            </a>
+            <a href="../Batch/batch.php"  id="batch">
+                <span class="material-symbols-outlined">safety_divider</span>
+                <h3>Batch</h3>
+            </a>
           <a href="../student/student.php" id="std">
             <span class="material-symbols-outlined">group</span>
             <h3>Students</h3>
@@ -78,7 +86,7 @@
       <main>
         <div class="courses">
           <h1 class="title">
-            <span class="material-symbols-outlined">book</span>coursess
+            <span class="material-symbols-outlined">view_list</span>Department
           </h1>
           <ul class="tabs">
             <li data-tab-target="#add" class="active tab">
@@ -92,43 +100,30 @@
             <div id="add" data-tab-content class="active">
               <div class="Course-form">
                 <!-- container -->
-                <h1>Course Registration Form</h1>
+                <h1>Department Registration Form</h1>
                 <form action="#">
                   <div class="formFirst">
                     <!-- first form container -->
                     <div class="courseDetails">
                       <!-- courseDetails container -->
-                      <span class="title">Course Details</span>
+                      <span class="title">Department Details</span>
                       <div class="fields">
                         <!-- fields for courseDetails -->
                         <div class="input-field">
-                          <label>Course Name</label>
+                          <label>Department ID</label>
                           <input
                             type="text"
-                            placeholder="Enter your Name"
+                            placeholder="Enter Department Id"
                             required
                           />
                         </div>
                         <div class="input-field">
-                          <label>Course ID</label>
+                          <label>Department Name</label>
                           <input
                             type="text"
-                            placeholder="Enter your Name"
+                            placeholder="Enter Department Name"
                             required
                           />
-                        </div>
-                        <!-- <div class="input-field">
-                <label>Department</label>
-                <input type="text" placeholder="Enter your Name" required />
-              </div> -->
-                        <div class="input-field">
-                          <label>Department</label>
-                          <select required>
-                            <option disabled selected>Select Department</option>
-                            <option>Computer Science</option>
-                            <option>Software Engineering</option>
-                            <option>Common Course</option>
-                          </select>
                         </div>
                         <div class="buttons">
                           <div class="submitbutton">
@@ -157,7 +152,7 @@
         </div>
       </main>
     </div>
-    <script src="./course.js"></script>
+    <script src="./department.js"></script>
     <script src="../index.js"></script>
   </body>
 </html>

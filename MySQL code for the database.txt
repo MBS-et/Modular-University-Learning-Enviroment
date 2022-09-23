@@ -1,0 +1,194 @@
+CREATE TABLE Account
+(
+	userID              INT(11) NOT NULL,
+	userName             VARCHAR(100) NOT NULL
+);
+
+
+
+ALTER TABLE Account
+ADD PRIMARY KEY (userID,userName);
+
+
+
+CREATE TABLE Course
+(
+	courseID              VARCHAR(100) NOT NULL,
+	courseName            VARCHAR(100) NULL,
+	departmentID          INT(11) NULL
+);
+
+
+
+ALTER TABLE Course
+ADD PRIMARY KEY (courseID);
+
+
+
+CREATE TABLE Department
+(
+	departmentID          INT(11) NOT NULL,
+	departmentName        VARCHAR(100) NULL
+);
+
+
+
+ALTER TABLE Department
+ADD PRIMARY KEY (departmentID);
+
+
+
+CREATE TABLE Instructor
+(
+	intructorID           INT(11) NOT NULL,
+	firstName             VARCHAR(100) NULL,
+	middleName            VARCHAR(100) NULL,
+	lasstName             VARCHAR(100) NULL,
+	email                 VARCHAR(100) NULL,
+	userName              VARCHAR(100) NULL,
+	password              VARCHAR(100) NULL,
+	gender                VARCHAR(100) NULL,
+	mobileNumber          VARCHAR(100) NULL,
+	roleID                INT(11) NULL
+);
+
+
+
+ALTER TABLE Instructor
+ADD PRIMARY KEY (intructorID);
+
+
+
+CREATE TABLE Instructor_Assignment
+(
+	assignmentID          INT(11) NOT NULL,
+	assignmentDate        DATE NULL,
+	batchNo               VARCHAR(100) NULL,
+	courseID              VARCHAR(100) NULL,
+	intructorID           INT(11) NULL
+);
+
+
+
+ALTER TABLE Instructor_Assignment
+ADD PRIMARY KEY (assignmentID);
+
+
+
+CREATE TABLE Role
+(
+	roleID                INT(11) NOT NULL,
+	roleType              VARCHAR(100) NULL
+);
+
+
+
+ALTER TABLE Role
+ADD PRIMARY KEY (roleID);
+
+
+
+CREATE TABLE Student_Assignment
+(
+	assignmentID          INT(11) NOT NULL,
+	assignmentDate        DATE NULL,
+	courseID              VARCHAR(100) NULL,
+	userName              VARCHAR(100) NULL
+);
+
+
+
+ALTER TABLE Student_Assignment
+ADD PRIMARY KEY (assignmentID);
+
+
+
+CREATE TABLE Student_Batchs
+(
+	batchNo               VARCHAR(100) NOT NULL
+);
+
+
+
+ALTER TABLE Student_Batchs
+ADD PRIMARY KEY (batchNo);
+
+
+
+CREATE TABLE Students
+(
+	userName              VARCHAR(100) NOT NULL,
+	firstName             VARCHAR(100) NULL,
+	middleName            VARCHAR(100) NULL,
+	lastName              VARCHAR(100) NULL,
+	mobileNumber          VARCHAR(100) NULL,
+	email                 VARCHAR(100) NULL,
+	gender                VARCHAR(100) NULL,
+	password              VARCHAR(100) NULL,
+	batchNo               VARCHAR(100) NULL
+);
+
+
+
+ALTER TABLE Students
+ADD PRIMARY KEY (userName);
+
+
+
+CREATE TABLE User
+(
+	userID               INT(11) NOT NULL,
+	userType             CHAR(18) NULL
+);
+
+
+
+ALTER TABLE User
+ADD PRIMARY KEY (userID);
+
+
+
+ALTER TABLE Account
+ADD FOREIGN KEY R_11 (userID) REFERENCES User (userID);
+
+
+
+ALTER TABLE Course
+ADD FOREIGN KEY R_1 (departmentID) REFERENCES Department (departmentID);
+
+
+
+ALTER TABLE Instructor
+ADD FOREIGN KEY R_8 (roleID) REFERENCES Role (roleID);
+
+
+
+ALTER TABLE Instructor_Assignment
+ADD FOREIGN KEY R_3 (batchNo) REFERENCES Student_Batchs (batchNo);
+
+
+
+ALTER TABLE Instructor_Assignment
+ADD FOREIGN KEY R_6 (courseID) REFERENCES Course (courseID);
+
+
+
+ALTER TABLE Instructor_Assignment
+ADD FOREIGN KEY R_10 (intructorID) REFERENCES Instructor (intructorID);
+
+
+
+ALTER TABLE Student_Assignment
+ADD FOREIGN KEY R_4 (courseID) REFERENCES Course (courseID);
+
+
+
+ALTER TABLE Student_Assignment
+ADD FOREIGN KEY R_9 (userName) REFERENCES Students (userName);
+
+
+
+ALTER TABLE Students
+ADD FOREIGN KEY R_2 (batchNo) REFERENCES Student_Batchs (batchNo);
+
+

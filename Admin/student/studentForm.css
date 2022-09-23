@@ -113,7 +113,7 @@ select {
   outline: none;
   font-size: 14px;
   font-weight: 400;
-  color: var(--text-light);
+  color:#333;
   border-radius: 5px;
   border: 1px solid #aaa;
   padding: 0 15px;
@@ -126,10 +126,10 @@ select {
 }
 .Student-form .input-field select,
 .Student-form .input-field input[type="date"] {
-  color: var(--text-light);
+  color: #333;
 }
 .Student-form .input-field input[type="date"]:valid {
-  color: var(--text-light);
+  color: #333;
 }
 .Student-form .btnText {
   font-size: 14px;

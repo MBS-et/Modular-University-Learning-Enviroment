@@ -54,6 +54,14 @@
             <span class="material-symbols-outlined">dashboard</span>
             <h3>Dashboard</h3>
           </a>
+          <a href="../Department/department.php" id="Dep">
+                <span class="material-symbols-outlined">view_list</span>
+                <h3>Department</h3>
+            </a>
+            <a href="../Batch/batch.php"  id="batch">
+                <span class="material-symbols-outlined">safety_divider</span>
+                <h3>Batch</h3>
+            </a>
           <a href="./student.php" class="active" id="std">
             <span class="material-symbols-outlined">group</span>
             <h3>Students</h3>
@@ -155,10 +163,17 @@
 
               <div class="input-field">
                 <label>Student Batch Number</label>
-                <input type="text" placeholder="Enter Students Batch Number" name="StudentBatchNumber" required />
-              </div>
-
-              
+                <select name="Gender"required>
+                  <option disabled selected>Select batch</option>
+                  <option>DRB2101</option>
+                  <option>DRB2102</option>
+                  <option>DRB2103</option>
+                  <option>DRB2002</option>
+                  <option>DRB2001</option>
+                  <option>DRB1902</option>
+                  <option>DRB1901</option>
+                  <option>DRB1802</option>
+                </select></div>
               <div class="input-field">
                 <label>User Name</label>
                 <input
@@ -235,40 +250,3 @@
   </body>
 </html>
 
-<?php
-$connection=mysqli_connect('localhost','root','','demo');
-if($connection){
-  // echo"we are connected";
-}
-else{
-die("connection failed");
-}
-
-if(isset($_POST['submit']))
-{
-  echo 'set';
-$FirstName=$_POST['FirstName'];
-$MiddleName=$_POST['MiddleName'];
-$LastName=$_POST['LastName'];
-$Gender=$_POST['Gender'];
-$MobileNumber=$_POST['MobileNumber'];
-$StudentBatchNumber=$_POST['StudentBatchNumber'];
-$UserName=$_POST['UserName'];
-$password=$_POST['password'];
-$email=$_POST['email'];
-echo 'set';
-$qry="insert into studentregistration values ('$FirstName','$MiddleName','$LastName','$Gender','$MobileNumber','$StudentBatchNumber','$UserName','$password','$email')";
-echo 'set';
-$result=mysqli_query($connection,$qry);
-if(!$result){
-  die('Query Fialed'.mysqli_error());
-}else
-{
-  echo 'successsssss';
-}
-
-}
-
-
-
-?>

@@ -50,6 +50,14 @@
             <span class="material-symbols-outlined">dashboard</span>
             <h3>Dashboard</h3>
         </a>
+        <a href="../Department/department.php" id="Dep">
+                <span class="material-symbols-outlined">view_list</span>
+                <h3>Department</h3>
+            </a>
+            <a href="../Batch/batch.php"  id="batch">
+                <span class="material-symbols-outlined">safety_divider</span>
+                <h3>Batch</h3>
+            </a>
         <a href="../student/student.php" id="std">
             <span class="material-symbols-outlined">group</span>
             <h3>Students</h3>
