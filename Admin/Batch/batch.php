@@ -53,7 +53,7 @@
                 <span class="material-symbols-outlined">view_list</span>
                 <h3>Department</h3>
             </a>
-            <a href="./batch.php"  id="batch">
+            <a href="./batch.php"  class="active" id="batch">
                 <span class="material-symbols-outlined">safety_divider</span>
                 <h3>Batch</h3>
             </a>
@@ -65,7 +65,7 @@
             <span class="material-symbols-outlined">groups</span>
             <h3>Instructors</h3>
           </a>
-          <a href="./course.php" class="active" id="cor">
+          <a href="./course.php"  id="cor">
             <span class="material-symbols-outlined">library_books</span>
             <h3>Courses</h3>
           </a>
@@ -101,7 +101,7 @@
               <div class="Course-form">
                 <!-- container -->
                 <h1>Batch Registration Form</h1>
-                <form action="#">
+                <form action="./server/addBatch.php" method="POST">
                   <div class="formFirst">
                     <!-- first form container -->
                     <div class="courseDetails">
@@ -113,13 +113,14 @@
                           <label>Batch</label>
                           <input
                             type="text"
+                            name="name"
                             placeholder="Enter Batch" 
                             required
                           />
                         </div>
                         <div class="buttons">
                           <div class="submitbutton">
-                            <button type="submit">
+                            <button type="submit" name="submit">
                               <i class="material-symbols-outlined">save</i>
                               <span class="btnText">Submit</span>
                             </button>

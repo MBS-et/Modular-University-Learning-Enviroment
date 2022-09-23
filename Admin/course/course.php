@@ -101,7 +101,7 @@
               <div class="Course-form">
                 <!-- container -->
                 <h1>Course Registration Form</h1>
-                <form action="#">
+                <form action="./server/addCourse.php" method="POST">
                   <div class="formFirst">
                     <!-- first form container -->
                     <div class="courseDetails">
@@ -110,37 +110,41 @@
                       <div class="fields">
                         <!-- fields for courseDetails -->
                         <div class="input-field">
-                          <label>Course Name</label>
-                          <input
-                            type="text"
-                            placeholder="Enter your Name"
-                            required
-                          />
-                        </div>
-                        <div class="input-field">
                           <label>Course ID</label>
                           <input
                             type="text"
+                            name="id"
                             placeholder="Enter your Name"
                             required
                           />
                         </div>
-                        <!-- <div class="input-field">
-                <label>Department</label>
-                <input type="text" placeholder="Enter your Name" required />
-              </div> -->
+                        <div class="input-field">
+                          <label>Course Name</label>
+                          <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter your Name"
+                            required
+                          />
+                        </div>
                         <div class="input-field">
                           <label>Department</label>
-                          <select required>
+                          <select required name="dep">
                             <option disabled selected>Select Department</option>
-                            <option>Computer Science</option>
-                            <option>Software Engineering</option>
-                            <option>Common Course</option>
+                            <?php
+                            include_once './server/connection.php';
+                            $sql = "SELECT `departmentName` FROM `department`";
+                            $result = mysqli_query($con,$sql);
+                            while ($row = $result->fetch_array())
+                            {
+                              echo "<option>". $row["departmentName"] ."</option>";
+                            }
+                            ?>
                           </select>
                         </div>
                         <div class="buttons">
                           <div class="submitbutton">
-                            <button type="submit">
+                            <button type="submit" name="submit">
                               <i class="material-symbols-outlined">save</i>
                               <span class="btnText">Submit</span>
                             </button>

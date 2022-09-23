@@ -49,7 +49,7 @@
             <span class="material-symbols-outlined">dashboard</span>
             <h3>Dashboard</h3>
           </a>
-          <a href="./department.php" id="Dep">
+          <a href="./department.php" class="active" id="Dep">
                 <span class="material-symbols-outlined">view_list</span>
                 <h3>Department</h3>
             </a>
@@ -65,7 +65,7 @@
             <span class="material-symbols-outlined">groups</span>
             <h3>Instructors</h3>
           </a>
-          <a href="./course.php" class="active" id="cor">
+          <a href="./course.php"  id="cor">
             <span class="material-symbols-outlined">library_books</span>
             <h3>Courses</h3>
           </a>
@@ -101,7 +101,7 @@
               <div class="Course-form">
                 <!-- container -->
                 <h1>Department Registration Form</h1>
-                <form action="#">
+                <form action="./server/addDepartment.php" method="POST">
                   <div class="formFirst">
                     <!-- first form container -->
                     <div class="courseDetails">
@@ -113,6 +113,7 @@
                           <label>Department ID</label>
                           <input
                             type="text"
+                            name ="id"
                             placeholder="Enter Department Id"
                             required
                           />
@@ -121,13 +122,14 @@
                           <label>Department Name</label>
                           <input
                             type="text"
+                            name = "name"
                             placeholder="Enter Department Name"
                             required
                           />
                         </div>
                         <div class="buttons">
                           <div class="submitbutton">
-                            <button type="submit">
+                            <button type="submit" name="submit">
                               <i class="material-symbols-outlined">save</i>
                               <span class="btnText">Submit</span>
                             </button>
