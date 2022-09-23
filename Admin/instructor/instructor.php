@@ -106,7 +106,7 @@
               <div class="Instructor-form">
                 <!-- instructor form conatiner -->
                 <h1>Instructor Registration Form</h1>
-                <form action="#">
+                <form action="./server/addInstructor.php" method="POST">
                   <div class="formFirst">
                     <!-- 1st form conatiner -->
                     <div class="personalDetails">
@@ -118,6 +118,7 @@
                           <label>First Name</label>
                           <input
                             type="text"
+                            name="Fname"
                             placeholder="Enter user's First Name"
                             required
                           />
@@ -126,6 +127,7 @@
                           <label>Middle Name</label>
                           <input
                             type="text"
+                            name="Mname"
                             placeholder="Enter user's Middle Name"
                             required
                           />
@@ -134,13 +136,14 @@
                           <label>Last Name</label>
                           <input
                             type="text"
+                            name="Lname"
                             placeholder="Enter user's Last Name"
                             required
                           />
                         </div>
                         <div class="input-field">
                           <label>Gender</label>
-                          <select required>
+                          <select name="gender" required>
                             <option disabled selected>Select gender</option>
                             <option>Male</option>
                             <option>Female</option>
@@ -150,12 +153,12 @@
                           <label>Mobile Number</label>
                           <input
                             type="number"
+                            name="Mnumber"
                             placeholder="Enter mobile number"
                             required
                           />
                         </div>
                         <div class="input-field"></div>
-                        <!-- fields for personal details -->
                       </div>
                       <!-- personalDetails conatainer -->
                     </div>
@@ -168,30 +171,31 @@
                           <label>Instructor ID</label>
                           <input
                             type="text"
+                            name="id"
                             placeholder="Enter instructors ID"
                           />
+                        </div>
+                        <div class="input-field">
+                          <label>Role</label>
+                          <select name="role" required>
+                            <option disabled selected>Select Role</option>
+                            <?php
+                            include_once './server/connection.php';
+                            $sql = "SELECT `roleType` FROM `role`";
+                            $result = mysqli_query($con,$sql);
+                            while ($row = $result->fetch_array())
+                            {
+                              echo "<option>". $row["roleType"] ."</option>";
+                            }
+                            ?>
+                          </select>
                         </div>
                         <div class="input-field">
                           <label>User Name</label>
                           <input
                             type="text"
+                            name="Uname"
                             placeholder="Enter The user's user name "
-                            required
-                          />
-                        </div>
-                        <div class="input-field">
-                          <label>Email</label>
-                          <input
-                            type="email"
-                            placeholder="www.example@gmail.com"
-                            required
-                          />
-                        </div>
-                        <div class="input-field">
-                          <label>Role</label>
-                          <input
-                            type="text"
-                            placeholder="enter user's role"
                             required
                           />
                         </div>
@@ -199,6 +203,7 @@
                           <label>Password</label>
                           <input
                             type="password"
+                            name="password"
                             placeholder="Enter  user's Password "
                             required
                           />
@@ -211,8 +216,17 @@
                             required
                           />
                         </div>
+                        <div class="input-field">
+                          <label>Email</label>
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="www.example@gmail.com"
+                            required
+                          />
+                        </div>
                         <div class="buttons">
-                          <button class="submit">
+                          <button type="submit" name="submit" class="submit">
                             <span class="btnText">Submit</span>
                             <i class="uil uil-save"></i>
                           </button>

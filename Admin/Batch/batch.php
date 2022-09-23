@@ -65,7 +65,7 @@
             <span class="material-symbols-outlined">groups</span>
             <h3>Instructors</h3>
           </a>
-          <a href="./course.php"  id="cor">
+          <a href="../course/course.php"  id="cor">
             <span class="material-symbols-outlined">library_books</span>
             <h3>Courses</h3>
           </a>
