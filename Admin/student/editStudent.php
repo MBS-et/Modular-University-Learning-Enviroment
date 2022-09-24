@@ -1,3 +1,19 @@
+<?php
+include_once './server/connection.php';
+
+$id = $_GET['updateid'];
+$sql="SELECT * FROM students WHERE userName = '$id'";
+$result=mysqli_query($con,$sql);
+$row=mysqli_fetch_assoc($result);
+$batchNo=$row['batchNo'];
+$email = $row['email'];
+$fname= $row['firstName'];
+$gender = $row['gender'];
+$lname= $row['lastName'];
+$mname= $row['middleName'];
+$mnumber=$row['mobileNumber'];
+$pass = $row['password'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,13 +107,7 @@
         </h1>
         <ul class="tabs">
           <li data-tab-target="#add" class="active tab">
-            <span class="material-symbols-outlined">add</span>Add
-          </li>
-          <li data-tab-target="#view" class="tab">
-            <span class="material-symbols-outlined">view_list</span>View
-          </li>
-          <li data-tab-target="#assign" class="tab">
-            <span class="material-symbols-outlined">assignment_add</span>Assign
+            <span class="material-symbols-outlined">edit</span>Update
           </li>
         </ul>
         <div class="tab-content">
@@ -105,7 +115,7 @@
             <div class="Student-form">
               <!-- container -->
               <h2>Student Registration Form</h2>
-              <form action="./server/addStudents.php" method="post">
+              <form action="./server/update.php" method="post">
                 <div class="formFirst">
                   <!-- first form container-->
                   <div class="personalDetails">
@@ -115,28 +125,29 @@
                       <!--  fields for personal details-->
                       <div class="input-field">
                         <label>First Name</label>
-                        <input type="text" placeholder="Enter your Name" name="Fname" required />
+                        <input type="text" placeholder="Enter your Name" name="Fname" required value=<?php echo $fname;?>  />
                       </div>
                       <div class="input-field">
                         <label>Middle Name</label>
-                        <input type="text" placeholder="Enter your Name" name="Mname" required />
+                        <input type="text" placeholder="Enter your Name" name="Mname" required value=<?php echo $mname;?> />
                       </div>
                       <div class="input-field">
                         <label>Last Name</label>
-                        <input type="text" placeholder="Enter your Name" name="Lname" required />
+                        <input type="text" placeholder="Enter your Name" name="Lname" required value=<?php echo $lname;?> />
                       </div>
                       <div class="input-field">
                         <label>Gender</label>
 
-                        <select name="gender" required>
+                        <select name="gender" required value=>
                           <option disabled selected>Select gender</option>
+                          <option selected><?php echo $gender;?></option>
                           <option>Male</option>
                           <option>Female</option>
                         </select>
                       </div>
                       <div class="input-field">
                         <label>Mobile Number</label>
-                        <input type="number" placeholder="Enter mobile number" name="Mnumber" required />
+                        <input type="number" placeholder="Enter mobile number" name="Mnumber" required value=<?php echo $mnumber;?> />
                       </div>
                       <div class="input-field">
 
@@ -156,6 +167,7 @@
                         <label>Student Batch Number</label>
                         <select name="batch" required>
                           <option disabled selected>Select batch</option>
+                          <option selected><?php echo $batchNo;?></option>
                           <?php
                           include_once './server/connection.php';
 
@@ -171,19 +183,19 @@
                       </div>
                       <div class="input-field">
                         <label>User Name</label>
-                        <input type="text" placeholder="Enter The user's user name " name="Uname" required />
+                        <input type="text" placeholder="Enter The user's user name " name="Uname" required  value=<?php echo $id;?> />
                       </div>
                       <div class="input-field">
                         <label>Password</label>
-                        <input type="password" placeholder="Enter The user's Password " name="password" required />
+                        <input type="password" placeholder="Enter The user's Password " name="password" required value=<?php echo $pass;?> />
                       </div>
                       <div class="input-field">
                         <label>Confirm Password</label>
-                        <input type="password" placeholder="confirm user's password " required />
+                        <input type="password" placeholder="confirm user's password " required value=<?php echo $pass;?> />
                       </div>
                       <div class="input-field">
                         <label>Email</label>
-                        <input type="email" placeholder="www.example@gmail.com" name="email" required />
+                        <input type="email" placeholder="www.example@gmail.com" name="email" required value=<?php echo $email;?> />
                       </div>
                       <div class="input-field">
 
@@ -191,7 +203,7 @@
                       <div class="buttons">
                         <button type="submit" name="submit">
                           <i class="material-symbols-outlined">save</i>
-                          <span class="btnText">Submit</span>
+                          <span class="btnText">Save</span>
                         </button>
                         </label>
                         </button>
@@ -207,53 +219,6 @@
                 <!-- container -->
             </div>
 
-          </div>
-          <div id="view" data-tab-content>
-            <div class="table-container">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Username</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
-                    <th>Moblie</th>
-                    <th>Gender</th>
-                    <th>Email</th>
-                    <th>Batch</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  include_once './server/connection.php';
-                  $sql = "SELECT userName,firstName,middleName,lastName,mobileNumber,gender,email,batchNo FROM students";
-                  $result = mysqli_query($con, $sql);
-                  while ($row = $result->fetch_array()) {
-                    echo "
-            <tr class='rows'>
-            <td>" . $row["userName"] . "</td>
-            <td>" . $row["firstName"] . "</td>
-            <td>" . $row["middleName"] . "</td>
-            <td>" . $row["lastName"] . "</td>
-            <td>" . $row["mobileNumber"] . "</td>
-            <td>" . $row["gender"] . "</td>
-            <td>" . $row["email"] . "</td>
-            <td>" . $row["batchNo"] . "</td>
-            <td> 
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./editStudent.php?updateid=". $row["userName"] ."'>Edit</a>
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='#'>Delete</a>
-            </td>
-            <tr>
-        ";
-                  }
-                  ?>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div id="assign" data-tab-content>
-            <h1>Assign</h1>
           </div>
         </div>
       </div>

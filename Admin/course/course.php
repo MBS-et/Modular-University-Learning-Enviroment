@@ -101,7 +101,7 @@
               <div class="Course-form">
                 <!-- container -->
                 <h1>Course Registration Form</h1>
-                <form action="./server/addCourse.php" method="POST">
+                <form action="./server/update.php" method="POST">
                   <div class="formFirst">
                     <!-- first form container -->
                     <div class="courseDetails">
