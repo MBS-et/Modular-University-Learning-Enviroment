@@ -1,3 +1,21 @@
+<?php
+include_once './server/connection.php';
+if(isset($_GET['updateId']))
+{
+$id = $_GET['updateId'];
+$sql="SELECT * FROM course WHERE courseID = '$id'";
+  $result=mysqli_query($con,$sql);
+ $row=mysqli_fetch_assoc($result);
+ $courseID=$row["courseID"];
+  $courseName= $row["courseName"];
+ $departmentID=$row["departmentID"];
+ $sql2="SELECT departmentName from department where departmentID='$departmentID'";
+$result2=mysqli_query($con,$sql2);
+$row=mysqli_fetch_assoc($result2);
+$depName=$row["departmentName"];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -91,18 +109,16 @@
           </h1>
           <ul class="tabs">
             <li data-tab-target="#add" class="active tab">
-              <span class="material-symbols-outlined">add</span>Add
+              <span class="material-symbols-outlined">edit</span>Update
             </li>
-            <li data-tab-target="#view" class="tab">
-              <span class="material-symbols-outlined">view_list</span>View
-            </li>
+           
           </ul>
           <div class="tab-content">
             <div id="add" data-tab-content class="active">
               <div class="Course-form">
                 <!-- container -->
                 <h1>Course Registration Form</h1>
-                <form action="./server/addCourse.php" method="POST">
+                <form action="./server/update.php" method="POST">
                   <div class="formFirst">
                     <!-- first form container -->
                     <div class="courseDetails">
@@ -117,6 +133,8 @@
                             name="id"
                             placeholder="Enter your Name"
                             required
+                            value=<?php echo  
+                             $courseID;?> 
                           />
                         </div>
                         <div class="input-field">
@@ -126,13 +144,16 @@
                             name="name"
                             placeholder="Enter your Name"
                             required
+                            value=<?php echo  $courseName;?> 
+
                           />
 
                         </div>
                         <div class="input-field">
                           <label>Department</label>
-                          <select required name="dep">
+                          <select name="dep" required >
                             <option disabled selected>Select Department</option>
+                            <option selected><?php echo $depName;?></option>
                             <?php
                             include_once './server/connection.php';
                             $sql = "SELECT `departmentName` FROM `department`";
@@ -142,15 +163,13 @@
                               echo "<option>". $row["departmentName"] ."</option>";
                             }
                             ?>
-
-                            
                           </select>
                         </div>
                         <div class="buttons">
                           <div class="submitbutton">
                             <button type="submit" name="submit">
                               <i class="material-symbols-outlined">save</i>
-                              <span class="btnText">Submit</span>
+                              <span class="btnText">Save</span>
                             </button>
                           </div>
                         </div>
@@ -166,48 +185,6 @@
                 <!-- container -->
               </div>
             </div>
-            <div id="view" data-tab-content>
-            <div class="table-container">
-              <!-- table container -->
-              <table>
-<thead>
-  <tr>
-    <th>Course ID</th>
-    <th>Course Name</th>
-    <th>Department</th>
-    <th>Action</th>
- </tr>
-</thead>
-<tbody>
-<?php
- include_once './server/connection.php';
- $sql="SELECT courseID,courseName,departmentID  from course";
-
-$result=mysqli_query($con,$sql);
-while($row=$result->fetch_array()){
- $depName=$row["departmentID"];
- $sql2="SELECT departmentName FROM  department WHERE departmentID='$depName'";
- $result2=mysqli_query($con,$sql2);
-$row2=mysqli_fetch_assoc($result2);
-
- echo "
-<tr class='rows'>
-<td>" .$row["courseID"]. "</td>
-<td>".$row["courseName"]."</td>
-<td>".$row2["departmentName"]."</td>
-<td> 
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./editCourse.php?updateId=" .$row["courseID"]. "'>Edit</a>
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='#'>Delete</a>
-            </td> 
-<tr>";}?>
-</tbody>
- </table>
-
-<!-- table container -->
-            </div>
-
-
-
             </div>
           </div>
         </div>
