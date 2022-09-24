@@ -242,7 +242,7 @@
             <td>" . $row["batchNo"] . "</td>
             <td> 
                  <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./editStudent.php?updateid=". $row["userName"] ."'>Edit</a>
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='#'>Delete</a>
+                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./server/delete.php?updateid=". $row["userName"] ."'>Delete</a>
             </td>
             <tr>
         ";

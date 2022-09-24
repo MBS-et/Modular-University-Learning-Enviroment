@@ -1,18 +1,21 @@
 <?php
 include_once './server/connection.php';
+if(isset($_GET['updateid']))
+{
+  $id = $_GET['updateid'];
+  $sql="SELECT * FROM students WHERE userName = '$id'";
+  $result=mysqli_query($con,$sql);
+  $row=mysqli_fetch_assoc($result);
+  $batchNo=$row['batchNo'];
+  $email = $row['email'];
+  $fname= $row['firstName'];
+  $gender = $row['gender'];
+  $lname= $row['lastName'];
+  $mname= $row['middleName'];
+  $mnumber=$row['mobileNumber'];
+  $pass = $row['password'];
+}
 
-$id = $_GET['updateid'];
-$sql="SELECT * FROM students WHERE userName = '$id'";
-$result=mysqli_query($con,$sql);
-$row=mysqli_fetch_assoc($result);
-$batchNo=$row['batchNo'];
-$email = $row['email'];
-$fname= $row['firstName'];
-$gender = $row['gender'];
-$lname= $row['lastName'];
-$mname= $row['middleName'];
-$mnumber=$row['mobileNumber'];
-$pass = $row['password'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
