@@ -1,3 +1,21 @@
+<?php
+include_once '../server/connection.php';
+if(isset($_GET['user']))
+{
+  $id = $_GET['user'];
+  $sql="SELECT * FROM students WHERE userName = '$id'";
+  $result=mysqli_query($con,$sql);
+  $row=mysqli_fetch_assoc($result);
+  $batchNo=$row['batchNo'];
+  $email = $row['email'];
+  $fname= $row['firstName'];
+  $gender = $row['gender'];
+  $lname= $row['lastName'];
+  $mname= $row['middleName'];
+  $mnumber=$row['mobileNumber'];
+  $pass = $row['password'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,8 +53,8 @@
                 </div>
                 <div class="profile">
                     <div class="user-information">
-                        <p>Hey,<b class="user-name">Peneal</b></p>
-                        <small class="text-muted" id="role">Admin</small>
+                        <p>Hey,<b class="user-name"><?php echo $fname  ?></b></p>
+                        <small class="text-muted" id="role">Student</small>
                     </div>
                     <div class="profile-picture">
                         <span class="material-symbols-outlined"> account_circle</span>
@@ -50,19 +68,19 @@
       <aside>
         
         <div class="sidebar">
-            <a href="../index.html"  id="dash">
+            <a href="../index.php?user=<?php echo $id; ?>"  id="dash">
                 <span class="material-symbols-outlined">dashboard</span>
                 <h3>Dashboard</h3>
             </a>
-            <a href="./app.html" class="active" id="app">
+            <a href="./app.php?user=<?php echo $id; ?>" class="active" id="app">
                 <span class="material-symbols-outlined">apps</span>
                 <h3>Apps</h3>
             </a>
-            <a href="../settings/settings.html" id="sett">
+            <a href="../settings/settings.php?user=<?php echo $id; ?>" id="sett">
                 <span class="material-symbols-outlined">settings</span>
                 <h3>Settings</h3>
             </a>
-            <a href="./login/login.html" id="logout">
+            <a href="./login/login.php" id="logout">
               <span class="material-symbols-outlined">logout</span>
               <h3>Logout</h3>
           </a>

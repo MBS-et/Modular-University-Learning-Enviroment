@@ -10,9 +10,3 @@ signInButton.addEventListener('click', () => {
 	container.classList.remove("right-panel-active");
 });
 
-loginBtn.addEventListener('click',()=>{
-
-	window.location = `../Admin/index.php`
-
-
-})

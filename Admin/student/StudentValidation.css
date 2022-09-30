@@ -1,0 +1,8 @@
+form input:valid
+{
+  border: 2px solid green;
+}
+form input:invalid
+{
+  border: 2px solid red;
+}

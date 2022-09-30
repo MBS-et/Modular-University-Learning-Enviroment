@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,8 @@
   <link rel="stylesheet" href="../index.css" />
   <link rel="stylesheet" href="./student.css" />
   <link rel="stylesheet" href="./studentForm.css" />
-  <link rel="stylesheet" href="./studentTable.css">
+  <link rel="stylesheet" href="./studentTable.css"/>
+  <link rel="stylesheet" href="./StudentValidation.css">
   <link href="../img/main-logo.png"   rel="icon">
 </head>
 
@@ -34,7 +36,7 @@
         </div>
         <div class="profile">
           <div class="user-information">
-            <p>Hey,<b class="user-name">Peneal</b></p>
+            <p>Hey,<b class="user-name">Admin</b></p>
             <small class="text-muted" id="role">Admin</small>
           </div>
           <div class="profile-picture">

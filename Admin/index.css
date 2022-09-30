@@ -38,7 +38,18 @@
 }
 html {
   font-size: 14px;
-}
+ }
+ html::-webkit-scrollbar
+ {
+  width: 5px;
+ }
+ html::-webkit-scrollbar-thumb{
+  background-color: var(--top-bar-light);
+ }
+ html::-webkit-scrollbar-track
+ {
+  background-color: var(--bdy-background-light);
+ }
 body {
   width: 100vw;
   max-height: 100vh;

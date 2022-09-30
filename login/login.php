@@ -15,12 +15,6 @@
         <div class="form-container sign-up-container">
             <form action="#">
                 <h1>Create Account</h1>
-                <!-- <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email for registration</span> -->
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
@@ -28,18 +22,19 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="../login/server/authenticate.php" method="POST">
                 <h1>Sign in</h1>
-                <!-- <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your account</span> -->
-                <input type="email" id="username" placeholder="Email" />
-                <input type="password" id="password" placeholder="Password" />
+                <select name="type" required>
+                          <option disabled selected>Select your role</option>
+                          <option>University</option>
+                          <option>Instructor</option>
+                          <option>Student</option>
+                </select>
+                <input type="text" id="username" name="username"    placeholder="Username" />
+                <input type="password" id="password" name="password" placeholder="Password" />
                 <a href="#">Forgot your password?</a>
-                <button class="login"> Sign In</button>
+                <button type="submit" name="submit"> Login </button>
+                <a href=""></a>
             </form>
         </div>
         <div class="overlay-container">
