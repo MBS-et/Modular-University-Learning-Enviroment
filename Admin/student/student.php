@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./student.css" />
   <link rel="stylesheet" href="./studentForm.css" />
   <link rel="stylesheet" href="./studentTable.css">
+  <link href="../img/main-logo.png"   rel="icon">
 </head>
 
 <body>
