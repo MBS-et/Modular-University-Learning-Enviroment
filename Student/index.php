@@ -76,7 +76,7 @@ if(isset($_GET['user']))
                 <span class="material-symbols-outlined" >settings</span>
                 <h3 data-text="&nbsp;&nbsp;&nbsp;Settings">&nbsp;&nbsp;&nbsp;Settings</h3>
             </a>
-            <a href="./login/login.php" id="logout">
+            <a href="../login/login.php" id="logout">
                 <span class="material-symbols-outlined">logout</span>
                 <h3 data-text="&nbsp;Logout&nbsp;" >&nbsp;Logout&nbsp;</h3>
             </a>

@@ -50,6 +50,20 @@ html {
  {
   background-color: var(--bdy-background-light);
  }
+
+ html::-webkit-scrollbar:horizontal
+ {
+  width: 5px;
+ }
+ html::-webkit-scrollbar-thumb:horizontal{
+  background-color: var(--top-bar-light);
+ }
+ html::-webkit-scrollbar-track:horizontal
+ {
+  background-color: var(--bdy-background-light);
+ }
+
+
 body {
   width: 100vw;
   max-height: 100vh;

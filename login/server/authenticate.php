@@ -32,9 +32,25 @@ if($type== "University")
     }
 
     
-}else if($type== "")
+}else if($type== "Instructor")
 {
-    
+    $sql = "SELECT password FROM instructor WHERE userName='$username';";
+    $result = mysqli_query($con,$sql);
+    if($result== null)
+    {
+
+    }else{
+        $row = mysqli_fetch_array($result);
+        $Upassword = $row[0];
+        if($Upassword==$pass)
+        {
+            header("Location: ../../Instructor/index.php?user=". $username ."");
+        }else
+        {
+
+        }
+       
+    }
 }
 
 }
