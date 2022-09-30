@@ -1,0 +1,100 @@
+:root {
+    --Side-Bar-background-light: #f7faff;
+    --active-text-light: #816578;
+    --top-bar-light: #6941c6;
+    --btn-hover-light: #6941c6;
+    --bdy-background-light: #e9eaf5;
+    --text-light: #101828;
+    --link-hover-light: #e4e4f8;
+    --active-btn-light: #7a5a78;
+    --dash-card-light: #ffffff;
+    --btn-background-light: #7a5af8;
+    --btn-text: #ffffff;
+  
+    --dash-card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+  
+    --dash-card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+  
+    --box-shadow: 0 2rem 3rem var(--bdy-background-dark);
+  }
+
+.table-container {
+    margin: 10px;
+    max-width: 1300px;
+    max-height: 570px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: var(--box-shadow);
+    background-color: var(--dash-card-light);
+    text-align: left;
+    /*overflow: hidden; */
+    border-radius: var(--border-radius-1);
+  }
+  thead {
+    box-shadow: 0 5px 10px rgba(128, 128, 128, 0.267);
+    background-color: var(--dash-card-light);
+  }
+  .header_fixed {
+    max-height: 100vh;
+    width: 100%;
+    overflow: auto;
+    border: 1px solid #dddddd;
+  }
+  
+  .header_fixed thead th {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    color: #e6e7e8;
+    font-size: 15px;
+  }
+  
+  th,
+  td {
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+
+  tr:nth-child(2n+1) {
+    background-color: var(--dash-card-light);
+  }
+  
+  tr:nth-child(odd) {
+    background-color: var(--bdy-background-light);
+  }
+  
+  tr:hover td {
+    color: var(--btn-hover-light);
+    cursor: pointer;
+    background-color: #ffffff;
+  }
+  
+  td a {
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    color: var(--top-bar-light);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  

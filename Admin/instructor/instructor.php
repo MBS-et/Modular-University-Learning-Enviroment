@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="./instructor.css" />
     <link rel="stylesheet" href="./instructorForm.css" />
-    <link rel="stylesheet" href="./instructorViewTable.css" />
+    <link rel="stylesheet" href="./instructorTable.css" />
   </head>
   <body>
     <header>
@@ -242,118 +242,54 @@
               </div>
             </div>
             <div id="view" data-tab-content>
-              <div class="table-container">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>S No.</th>
-                      <th>Image</th>
-                      <th>Username</th>
-                      <th>Email</th>
-                      <th>Department</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>
-                        <img
-                        src=https://drive.google.com/uc?export=view&id=1qw3KUJnYgvnJHQP-yY13u_rXrJO8ZbL_
-                        />
-                      </td>
-                      <td>Rakhi Gupta</td>
-                      <td>rakhigupta@gmail.com</td>
-                      <td>Engineering</td>
-                      <td><button>View</button></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>
-                        <img
-                        src=https://drive.google.com/uc?export=view&id=1KV8Ob2wXIcobIvayGGDB1qUpQn_iZKIp
-                        />
-                      </td>
-                      <td>Anjali</td>
-                      <td>anjali@gmail.com</td>
-                      <td>Engineering</td>
-                      <td><button>View</button></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>
-                        <img
-                        src=https://drive.google.com/uc?export=view&id=1ock7haLmYaAbHe8yn9H8ZGgkaGY9lcB0
-                        />
-                      </td>
-                      <td>Vejata Gupta</td>
-                      <td>Vejata@gmail.com</td>
-                      <td>Engineering</td>
-                      <td><button>View</button></td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>
-                        <img
-                        src=https://drive.google.com/uc?export=view&id=1MbkS3AwaCNaKfMTmCQMHD1okQEubCdnt
-                        />
-                      </td>
-                      <td>Shweta</td>
-                      <td>Shweta@gmail.com</td>
-                      <td>Engineering</td>
-                      <td><button>View</button></td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>
-                        <img
-                        src=https://drive.google.com/uc?export=view&id=1oztRYJUSZ5txDbaAAGg0O8_Ek6nzLAId
-                        />
-                      </td>
-                      <td>Adarsh</td>
-                      <td>Adarsh@gmail.com</td>
-                      <td>Engineering</td>
-                      <td><button>View</button></td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>
-                        <img
-                        src=https://drive.google.com/uc?export=view&id=1ysB5QChCSLpz3igUoDzalENFsjJEe8H7
-                        />
-                      </td>
-                      <td>Monti</td>
-                      <td>Monti@gmail.com</td>
-                      <td>Engineering</td>
-                      <td><button>View</button></td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td>
-                        <img
-                        src=https://drive.google.com/uc?export=view&id=1fCtvhYFy1roieanYeXua1jKJyfUhiDS6
-                        />
-                      </td>
-                      <td>Arpit</td>
-                      <td>Arpit@gmail.com</td>
-                      <td>Engineering</td>
-                      <td><button>View</button></td>
-                    </tr>
-                    <tr>
-                      <td>8</td>
-                      <td>
-                        <img
-                        src=https://drive.google.com/uc?export=view&id=1ZHPBm7fBxfbW2qV8pLTeDvMreXzqcW-x
-                        />
-                      </td>
-                      <td>Priya</td>
-                      <td>priya@gmail.com</td>
-                      <td>Engineering</td>
-                      <td><button>View</button></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Instructor ID</th>
+                    <th>Username</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Moblie</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  include_once './server/connection.php';
+                  $sql = "SELECT intructorID,userName,firstName,middleName,lasstName,mobileNumber,gender,email,roleID FROM instructor";
+                  $result = mysqli_query($con, $sql);
+                  while ($row = $result->fetch_array()) {
+                    $roleId =  $row["roleID"];
+                    $sql2 = "SELECT roleType from role where  roleID = '$roleId'";
+                    $result2=mysqli_query($con,$sql2);
+                    $row2=mysqli_fetch_assoc($result2);
+                    echo "
+            <tr class='rows'>
+            <td>" . $row["intructorID"] . "</td>
+            <td>" . $row["userName"] . "</td>
+            <td>" . $row["firstName"] . "</td>
+            <td>" . $row["middleName"] . "</td>
+            <td>" . $row["lasstName"] . "</td>
+            <td>" . $row["mobileNumber"] . "</td>
+            <td>" . $row["gender"] . "</td>
+            <td>" . $row["email"] . "</td>
+            <td>" . $row2["roleType"] . "</td>
+            <td> 
+                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./editStudent.php?updateid=". $row["userName"] ."'>Edit</a>
+                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./server/delete.php?updateid=". $row["userName"] ."'>Delete</a>
+            </td>
+            <tr>
+        ";
+                  }
+                  ?>
+                </tbody>
+              </table>
+            </div>
             </div>
             <div id="assign" data-tab-content>
               <h1>Assign</h1>
