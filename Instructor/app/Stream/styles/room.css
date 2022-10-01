@@ -1,0 +1,364 @@
+:root {
+  --Side-Bar-background-light: #f7faff;
+  --active-text-light: #816578;
+  --top-bar-light: #6941c6;
+  --btn-hover-light: #55379d;
+  --bdy-background-light: #e9eaf5;
+  --text-light: #101828;
+  --link-hover-light: #e4e4f8;
+  --active-btn-light: #7a5a78;
+  --dash-card-light: #ffffff;
+  --btn-background-light: #7a5af8;
+  --btn-text: #ffffff;
+
+  --dash-card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --dash-card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--bdy-background-dark);
+}
+.container {
+  margin-top: 74px;
+  height: clac(100vh - 74px);
+  width: 100%;
+  position: relative;
+}
+
+#room__container {
+  position: relative;
+  display: flex;
+  gap: 3rem;
+}
+
+#members__container {
+  background: var(--bdy-background-light);
+  border-right: 1px solid ;
+  overflow-y: auto;
+  width: 90%;
+  max-width: 250px;
+  position: fixed;
+  height: 100%;
+  z-index: 999;
+}
+
+#members__count {
+  background-color:var(--bdy-background-light);
+  padding: 7px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  color: var(--text-light);
+}
+
+#members__header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1rem;
+  position: fixed;
+  font-size: 18px;
+  background-color:var(--btn-hover-light);
+  width: 218px;
+  color: #FFF;
+}
+
+#member__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 6.5rem;
+}
+
+.members__list::-webkit-scrollbar {
+  height: 14px;
+}
+
+.member__wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding-left: 1em;
+}
+
+.green__icon {
+  display: block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #6941c6;
+}
+
+.member_name{
+  font-size: 14px;
+  line-height: 0;
+}
+
+#messages__container {
+  height: calc(100vh);
+  background-color: var(--bdy-background-light);
+  right: 0;
+  position: absolute;
+  width: 100%;
+  max-width: 25rem;
+  overflow-y: auto;
+  border-left: 1px solid #111;
+}
+
+#messages {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.message__wrapper:last-child {
+  margin-bottom: 6.5rem;
+}
+
+.message__wrapper {
+  display: flex;
+  gap: 10px;
+  margin: 1em;
+}
+
+.message__body {
+  background-color: var(--dash-card-light);
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: fit-content;
+  max-width: 900px;
+}
+
+.message__body strong {
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.message__body__bot{
+  padding: 0 20px;
+  max-width: 900px;
+  color: var(--text-light);
+}
+
+
+.message__author {
+  margin-right: 10px;
+  color: var(--top-bar-light)!important;
+
+}
+
+.message__author__bot {
+  margin-right: 10px;
+  color: #a52aca!important;
+
+}
+
+.message__text {
+  margin: 0;
+}
+
+#message__form {
+  width: 23.2rem;
+  position: fixed;
+  bottom: 0;
+  display: block;
+  background-color: var(--dash-card-light);
+  padding: 1em;
+}
+
+#message__form input {
+  color:var(--text-light);;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 18px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: var(--bdy-background-light);
+}
+
+#message__form input:focus {
+  outline: none;
+}
+
+#message__form input::placeholder {
+  color: var(--top-bar-light);
+}
+
+#stream__container {
+  justify-self: center;
+  width: calc(100% - 40.7rem);
+  position: fixed;
+  left: 15.7rem;
+  top: clac(100vh - 72px);
+  overflow-y: auto;
+  height: 100%;
+}
+
+#stream__box
+{
+  background-color: var(--dash-card-light);
+  height: 60vh;
+  display: none;
+  background-size: 300px;
+}
+#stream__box .video_container
+{
+  border: 2px solid black;
+  border-radius: 0%;
+  height: 100% !important;
+  width: 100% !important;
+}
+#stream__box video
+{
+  border-radius: 0;
+}
+#streams_container
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 225px;
+  gap:2em;
+}
+.video_container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--top-bar-light);
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+
+
+  background-image: url("/images/user.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75px;
+}
+.video-player
+{
+  height: 100%;
+  width: 100%;
+}
+.video-player video
+{
+  border-radius: 50%;
+}
+@media (max-width: 1400px) {
+  .video_container
+  {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media (max-width: 1200px) {
+  #members__container {
+    display: none;
+  }
+
+  #members__button {
+    display: block;
+  }
+
+  #stream__container {
+    width: calc(100% - 25rem);
+    left: 0;
+  }
+}
+
+@media (max-width: 980px) {
+  #stream__container {
+    width: calc(100% - 20rem);
+    left: 0;
+  }
+  #messages__container {
+    max-width: 20rem;
+  }
+
+  #message__form {
+    width: 18.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #stream__container {
+    width: 100%;
+  }
+  .video_container
+  {
+    height: 100px;
+    width: 100px;
+  }
+  #messages__container {
+    display: none;
+  }
+
+  #chat__button {
+    display: block;
+  }
+}
+
+#stream__box {
+  position: relative;
+}
+
+.stream__focus {
+  width: 100%;
+  height: 100%;
+}
+
+.stream__focus iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.stream__actions {
+  position: fixed;
+  bottom: 1rem;
+  border-radius: 8px;
+  background-color: var(--dash-card-light);
+  padding: 1rem;
+  left: 50%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+ transform: translateX(-75%);
+}
+
+.stream__actions a,
+.stream__actions button {
+  cursor: pointer;
+  background-color: var(--btn-background-light);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.stream__actions a svg,
+.stream__actions button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #ede0e0;
+}
+
+.stream__actions a.active,
+.stream__actions button.active,
+.stream__actions a:hover,
+.stream__actions button:hover {
+  background-color: #3c2186;
+}

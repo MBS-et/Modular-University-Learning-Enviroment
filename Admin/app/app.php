@@ -103,7 +103,7 @@
               <span class="material-symbols-outlined">chat</span>Message
             </li>
             <li data-tab-target="#video" class="tab">
-              <span class="material-symbols-outlined">video_chat</span>Video
+              <span class="material-symbols-outlined">video_chat</span><a href="./Stream/lobby.html">Video</a>
             </li>
           </ul>
           <div class="tab-content">

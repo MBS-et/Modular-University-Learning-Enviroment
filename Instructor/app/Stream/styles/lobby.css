@@ -1,0 +1,113 @@
+:root {
+  --Side-Bar-background-light: #f7faff;
+  --active-text-light: #816578;
+  --top-bar-light: #6941c6;
+  --btn-hover-light: #55379d;
+  --bdy-background-light: #e9eaf5;
+  --text-light: #101828;
+  --link-hover-light: #e4e4f8;
+  --active-btn-light: #7a5a78;
+  --dash-card-light: #ffffff;
+  --btn-background-light: #7a5af8;
+  --btn-text: #ffffff;
+
+  --dash-card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --dash-card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--bdy-background-dark);
+}
+#form__container {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  background-color: var(--dash-card-light);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#lobby__form {
+  padding: 2em;
+}
+
+#form__container__header {
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--dash-card-light);
+  margin: 0;
+  font-size: 18px;
+  font-size: 300;
+  line-height: 0;
+}
+
+.form__field__wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.form__field__wrapper label {
+  font-size: 14px;
+  line-height: 1.7em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.form__field__wrapper input {
+  box-sizing: border-box;
+  color: black;
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-radius: 5px;
+  padding: 16px 20px;
+  font-size: 15px;
+  background-color: var(--bdy-background-light);
+}
+
+.form__field__wrapper button[type='submit'] {
+  margin-top: 32px;
+  cursor: pointer;
+  background-color: var(--btn-background-light);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 5px;
+  gap: 10px;
+}
+
+.form__field__wrapper button[type='submit'] svg {
+  fill: var(--btn-text);
+  width: 20px;
+}
+
+#avatar__selection {
+  margin-reight: 10px;
+  display: flex;
+  gap: 1em;
+}
+
+.avatar__option {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid #797a79;
+}
+
+.avatar__option__selected {
+  border: 3px solid #845695;
+}

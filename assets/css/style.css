@@ -1033,7 +1033,11 @@ section {
 .pricing .featured {
   background: #6941c6;
 }
-
+.row
+{
+  display: flex;
+  justify-content: center;
+}
 /*--------------------------------------------------------------
 # Frequently Asked Questions
 --------------------------------------------------------------*/
