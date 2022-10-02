@@ -90,21 +90,13 @@ if(isset($_GET['user']))
             <div class="left">
                 <h1>Dashboard</h1>
             <div class="insights">
-                <div class="dash-Instructors">
-                  <span class="material-symbols-outlined">groups</span>
+                <div class="dash-Courses">
+                <span class="material-symbols-outlined">menu_book</span>
                   <div class="middle">
                     <div class="left">
-                      <h3>Active Instructors</h3>
-                      <h1 class="amt-active-instructors">43</h1>
-                    </div>
-                    <div class="progress">
-                      <svg>
-                        <circle cx="38" cy="38" r="36"></circle>
-                      </svg>
-                      <div class="number">
-                        <p class="amt-active-instructors-inPercent">81%</p>
-                      </div>
-                      <small class="text-muted">Last 24 Hours</small>
+                      <h3>Active Courses</h3>
+                      <h1 class="amt-active-Courses">43</h1>
+                      <a class="text-muted">Details</a>
                     </div>
                   </div>
                 </div>
@@ -114,41 +106,16 @@ if(isset($_GET['user']))
                     <div class="left">
                       <h3>Active Students</h3>
                       <h1 class="amt-active-Students">600</h1>
+                      <a class="text-muted">Details</a>
                     </div>
-                    <div class="progress">
-                      <svg>
-                        <circle cx="38" cy="38" r="36"></circle>
-                      </svg>
-                      <div class="number">
-                        <p class="amt-active-Students-inPercent">89%</p>
-                      </div>
-                      <small class="text-muted">Last 24 Hours</small>
                     </div>
                   </div>
                 </div>
-                <div class="dash-Courses">
-                  <span class="material-symbols-outlined">menu_book</span>
-                  <div class="middle">
-                    <div class="left">
-                      <h3>Active Courses</h3>
-                      <h1 class="amt-active-Courses">25</h1>
-                    </div>
-                    <div class="progress">
-                      <svg>
-                        <circle cx="38" cy="38" r="36"></circle>
-                      </svg>
-                      <div class="number">
-                        <p class="amt-active-Courses-inPercent">61%</p>
-                      </div>
-                      <small class="text-muted">Last 24 Hours</small>
-                    </div>
-                  </div>
+            </div>
                 </div>
-              </div>
-            </div>
-            <div class="right">
-
-            </div>
+             
+            
+            
             
         </div>
       </main>

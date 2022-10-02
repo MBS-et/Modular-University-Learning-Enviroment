@@ -15,8 +15,9 @@
   <link rel="stylesheet" href="./student.css" />
   <link rel="stylesheet" href="./studentForm.css" />
   <link rel="stylesheet" href="./studentTable.css"/>
-  <link rel="stylesheet" href="./StudentValidation.css">
+  <link rel="stylesheet" href="./StudentValidation.css"/>
   <link href="../img/main-logo.png"   rel="icon">
+
 </head>
 
 <body>
@@ -81,7 +82,7 @@
           <span class="material-symbols-outlined">settings</span>
           <h3>Settings</h3>
         </a>
-        <a href="./login/login.php" id="logout">
+        <a href="../../login/login.php" id="logout">
           <span class="material-symbols-outlined">logout</span>
           <h3>Logout</h3>
         </a>

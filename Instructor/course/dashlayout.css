@@ -1,0 +1,40 @@
+.dashContainer
+{
+    padding-right: 50px;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 700px 600px;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+    "assign notification"
+    "send notification"
+    ;
+    gap:2rem;
+}
+.table-container
+{
+  grid-area: assign;
+  overflow: hidden;
+  overflow-y: auto;
+
+}
+.notification-table
+{
+  grid-area: notification;
+  color: var(--text-light);
+  max-height: 610px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.make-announcment
+{
+    width: 655px;
+    margin-left: 20px;
+    padding: 20px;
+    grid-area: send;
+    height: 280px;
+    border-radius: var(--border-radius-1);
+    background-color: var(--dash-card-light);
+}

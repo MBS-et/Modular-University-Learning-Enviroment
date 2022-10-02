@@ -1,0 +1,10 @@
+.table-container-assign 
+  {
+    max-height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+    margin-left: 10px;
+    max-width: 1300px;
+    color: var(--text-light);
+    /* background: red; */
+  }
