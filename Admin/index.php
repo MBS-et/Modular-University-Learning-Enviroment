@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -96,7 +97,18 @@
                   <div class="middle">
                     <div class="left">
                       <h3>Active Instructors</h3>
-                      <h1 class="amt-active-instructors">43</h1>
+                      
+
+                      
+<?php
+ include_once './server/connection.php';
+$query="SELECT * FROM instructor ";
+$select_all=mysqli_query($con,$query);
+$instructor_count=mysqli_num_rows($select_all);
+echo "<h1 class='amt-active-instructors'>{$instructor_count}</h1> ";
+?>
+
+
                     </div>
                     <div class="progress">
                       <svg>
@@ -114,7 +126,15 @@
                   <div class="middle">
                     <div class="left">
                       <h3>Active Students</h3>
-                      <h1 class="amt-active-Students">600</h1>
+                        <?php
+ include_once './server/connection.php';
+$query="SELECT * FROM students ";
+$select_all=mysqli_query($con,$query);
+$student_count=mysqli_num_rows($select_all);
+echo "<h1 class='amt-active-Students'>{$student_count}</h1> ";
+?>
+
+                      
                     </div>
                     <div class="progress">
                       <svg>
@@ -132,7 +152,15 @@
                   <div class="middle">
                     <div class="left">
                       <h3>Active Courses</h3>
-                      <h1 class="amt-active-Courses">25</h1>
+                       <?php
+
+ include_once './server/connection.php';
+$query="SELECT * FROM course ";
+$select_all=mysqli_query($con,$query);
+$course_count=mysqli_num_rows($select_all);
+echo "<h1 class='amt-active-Courses'>{$course_count}</h1>"
+?>
+
                     </div>
                     <div class="progress">
                       <svg>
