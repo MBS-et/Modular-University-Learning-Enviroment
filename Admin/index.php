@@ -86,7 +86,7 @@
             </a>
         </div>
       </aside>
-      <!-- <main>
+      <main>
         <div class="dashboard">
             <div class="left">
                 <h1>Dashboard</h1>
@@ -152,7 +152,7 @@
             </div>
             
         </div>
-      </main> -->
+      </main>
     </div>
     <script src="./index.js"></script>
   </body>
