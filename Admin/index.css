@@ -38,31 +38,26 @@
 }
 html {
   font-size: 14px;
- }
- html::-webkit-scrollbar
- {
+}
+html::-webkit-scrollbar {
   width: 5px;
- }
- html::-webkit-scrollbar-thumb{
+}
+html::-webkit-scrollbar-thumb {
   background-color: var(--top-bar-light);
- }
- html::-webkit-scrollbar-track
- {
+}
+html::-webkit-scrollbar-track {
   background-color: var(--bdy-background-light);
- }
+}
 
- html::-webkit-scrollbar:horizontal
- {
+html::-webkit-scrollbar:horizontal {
   width: 5px;
- }
- html::-webkit-scrollbar-thumb:horizontal{
+}
+html::-webkit-scrollbar-thumb:horizontal {
   background-color: var(--top-bar-light);
- }
- html::-webkit-scrollbar-track
- {
+}
+html::-webkit-scrollbar-track {
   background-color: var(--bdy-background-light);
- }
-
+}
 
 body {
   width: 100vw;
@@ -436,4 +431,11 @@ main {
     cursor: pointer;
     color: var(--bdy-background-light);
   }
+}
+.row {
+  display: flex;
+  margin: 30px;
+  padding: 30px 20px 20px 5px;
+  max-width: 1600px;
+  max-height: 500px;
 }
