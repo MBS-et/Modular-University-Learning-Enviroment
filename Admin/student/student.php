@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,15 +10,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
   <!-- Main Body Css -->
+  <!-- <link rel="stylesheet" href="./studentAssinment2.css"> -->
   <link rel="stylesheet" href="../index.css" />
   <link rel="stylesheet" href="./student.css" />
   <link rel="stylesheet" href="./studentForm.css" />
-  <link rel="stylesheet" href="./studentTable.css"/>
-  <link rel="stylesheet" href="./StudentValidation.css"/>
-  <link href="../img/main-logo.png"   rel="icon">
+  <link rel="stylesheet" href="./studentTable.css" />
+  <link href="../img/main-logo.png" rel="icon">
 
 </head>
-
 <body>
   <header>
     <div class="top">
@@ -100,8 +98,8 @@
           <li data-tab-target="#view" class="tab">
             <span class="material-symbols-outlined">view_list</span>View
           </li>
-          <li data-tab-target="#assign" class="tab">
-            <span class="material-symbols-outlined">assignment_add</span>Assign
+          <li  class="tab">
+            <span class="material-symbols-outlined">assignment_add</span><a href="../StudentAssignment/assignment.php">Assign</a>
           </li>
         </ul>
         <div class="tab-content">
@@ -245,8 +243,8 @@
             <td>" . $row["email"] . "</td>
             <td>" . $row["batchNo"] . "</td>
             <td> 
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./editStudent.php?updateid=". $row["userName"] ."'>Edit</a>
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./server/delete.php?updateid=". $row["userName"] ."'>Delete</a>
+                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./editStudent.php?updateid=" . $row["userName"] . "'>Edit</a>
+                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./server/delete.php?updateid=" . $row["userName"] . "'>Delete</a>
             </td>
             <tr>
         ";
@@ -257,11 +255,58 @@
             </div>
           </div>
           <div id="assign" data-tab-content>
-            <h1>Assign</h1>
+            <div class="student-assignment-form">
+              <!-- container -->
+              <h1>Student Assignment</h1>
+              <form class="myForm" action="#">
+                <div class="form-second">
+                  <!-- form container -->
+                  <div class="studentAsignmentDetails">
+                    <!-- student Assignment details -->
+                    <span class="title">Assignment Details</span>
+                    <div class="fields">
+                      <!-- fields for student assignment -->
+
+                      <div class="input-field">
+                        <label>Search By </label>
+                        <select required>
+                          <option disabled selected>by batch or by text field</option>
+                          <option>By Batch</option>
+                          <option>By ID</option>
+                        </select>
+                      </div>
+                      <div class="input-field">
+                        <label>By Batch</label>
+                        <input type="text" placeholder="Enter Batch to Search" required />
+                      </div>
+
+                      <div class="input-field">
+                        <label>By ID</label>
+                        <input type="text" placeholder="Enter Id to Search" required />
+                      </div>
+
+                      <div class="buttons">
+                        <button class="submit">
+                          <span class="btnText">Search</span>
+                          <i class="uil uil-save"></i>
+                        </button>
+                      </div>
+
+                      <!-- fields for student assignment -->
+                    </div>
+                    <!-- student assignment details -->
+                  </div>
+
+                  <!--form container  -->
+                </div>
+              </form>
+
+              <!-- container -->
+            </div>
           </div>
         </div>
       </div>
-    </main>
+  </main>
   </div>
   <script src="../index.js"></script>
   <script src="./student.js"></script>
