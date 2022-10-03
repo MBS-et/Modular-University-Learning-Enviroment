@@ -32,12 +32,12 @@
   display: flex;
 }
 .Course-form {
-  /* position: relative; */
-  flex: 1;
-  max-width: 350px;
+  position: relative;
+  max-width: 1100px;
   max-height: 700px;
-  margin-left: 250px;
+  margin-left: 90px;
   margin-top: 20px;
+  width: 100%;
   border-radius: 6px;
   padding: 30px;
   border-radius: var(--border-radius-1);
@@ -60,10 +60,6 @@
   border-radius: 8px;
   
 } */
-.Course-form h1
-{
-  text-align: center;
-}
 .Course-form form {
   position: relative;
   margin-top: 16px;
@@ -98,23 +94,15 @@
 }
 .Course-form span {
   color: var(--text-light);
-  text-align: center;
-}
-.courseDetails span
-{
-  text-align: center;
 }
 .Course-form form .fields .input-field {
   display: flex;
-  justify-content: left;
-  align-items: center;
-  width: 100px;
-  flex-direction: row;
-  margin: 5px;
+  width: calc(100% / 3 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
   background: var(--dash-card-light);
 }
 .Course-form .input-field label {
-  align-items: center;
   font-size: 15px;
   font-weight: 500;
   color: var(--text-light);
@@ -122,7 +110,6 @@
 .Course-form .input-field input,
 select {
   outline: none;
-  align-items: center;
   font-size: 14px;
   font-weight: 400;
   color: var(--text-light);
@@ -130,7 +117,7 @@ select {
   border: 1px solid #aaa;
   padding: 0 15px;
   height: 42px;
-  margin: 5px;
+  margin: 8px 0;
 }
 .Course-form .input-field input :focus,
 .Course-form .input-field select:focus {
@@ -171,9 +158,6 @@ select {
   background-color: var(--btn-background-light);
   transition: all 0.3s linear;
   cursor: pointer;
-  
-  margin-left: 40px;
-  margin-top: 10px;
 }
 form button:hover {
   background-color: var(--btn-hover-light);

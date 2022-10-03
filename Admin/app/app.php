@@ -101,10 +101,10 @@
             </li>
             <li  class="tab">
               <span class="material-symbols-outlined">chat</span>
-              <a href="../../ChatApp/index.php">Message
+              <a href="../../ChatApp/">Message
               </a>
             </li>
-            <li data-tab-target="#video" class="tab">
+            <li  class="tab">
               <span class="material-symbols-outlined">video_chat</span><a href="./Stream/lobby.html">Video</a>
             </li>
           </ul>
