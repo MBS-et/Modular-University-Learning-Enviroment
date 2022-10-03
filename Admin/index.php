@@ -14,7 +14,7 @@
     <link href="img/main-logo.png"   rel="icon">
     <!-- Main Body Css -->
     <link rel="stylesheet" href="./index.css" />
-    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
   
   <body>
@@ -175,11 +175,47 @@ echo "<h1 class='amt-active-Courses'>{$course_count}</h1>"
                 </div>
               </div>
             </div>
+
+            
             <div class="right">
 
             </div>
+           
             
-        </div>
+<!--  -->
+
+ <div class="row">
+       <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+
+
+          </div>
+          
       </main>
     </div>
     <script src="./index.js"></script>
