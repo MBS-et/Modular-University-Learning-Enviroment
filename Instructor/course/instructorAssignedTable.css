@@ -28,9 +28,9 @@
     align-items: center;
     margin-left: 20px ;
     color: var(--text-light);
-    max-width: 1280px;
+    /* max-width: 1280px;
     overflow: hidden;
-    overflow-x: scroll;
+    overflow-x: scroll; */
     font-size: 0.9rem;
   }
   table {

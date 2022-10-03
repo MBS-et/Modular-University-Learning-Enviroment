@@ -78,7 +78,7 @@
             <span class="material-symbols-outlined">settings</span>
             <h3>Settings</h3>
           </a>
-          <a href="./login/login.php" id="logout">
+          <a href="../../login/login.php" id="logout">
             <span class="material-symbols-outlined">logout</span>
             <h3>Logout</h3>
           </a>
@@ -96,6 +96,9 @@
             <li data-tab-target="#view" class="tab">
               <span class="material-symbols-outlined">view_list</span>View
             </li>
+            <li data-tab-target="#assign" class="tab">
+            <span class="material-symbols-outlined">assignment_add</span>Assign
+          </li>
           </ul>
           <div class="tab-content">
             <div id="add" data-tab-content class="active">

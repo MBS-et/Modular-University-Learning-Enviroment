@@ -6,6 +6,7 @@ if(isset($_GET['user']))
   $sql="SELECT * FROM instructor WHERE userName = '$id'";
   $result=mysqli_query($con,$sql);
   $row=mysqli_fetch_assoc($result);
+  $Iid = $row['intructorID'];
   $email = $row['email'];
   $fname= $row['firstName'];
   $gender = $row['gender'];
@@ -30,6 +31,8 @@ if(isset($_GET['user']))
     <!-- Main Body Css -->
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="./course.css">
+     <link rel="stylesheet" href="./instructorAssignedTable.css">
+     <link rel="stylesheet" href="./dashlayout.css">
   </head>
   <body>
     <header>
@@ -68,8 +71,8 @@ if(isset($_GET['user']))
                 <h3>Dashboard</h3>
             </a>
             <a href="./course.php?user=<?php echo $id; ?>" class="active" id="cor">
-                <span class="material-symbols-outlined">library_books</span>
-                <h3>Courses</h3>
+                <span class="material-symbols-outlined">home</span>
+                <h3>Home</h3>
             </a>
             <a href="../app/app.php?user=<?php echo $id; ?>" id="app">
                 <span class="material-symbols-outlined">apps</span>
@@ -79,7 +82,7 @@ if(isset($_GET['user']))
                 <span class="material-symbols-outlined">settings</span>
                 <h3>Settings</h3>
             </a>
-            <a href="../login/login.php?user=<?php echo $id; ?>" id="logout">
+            <a href="../../login/login.php?user=<?php echo $id; ?>" id="logout">
               <span class="material-symbols-outlined">logout</span>
               <h3>Logout</h3>
           </a>
@@ -88,6 +91,135 @@ if(isset($_GET['user']))
       <main>
         <div class="courses">
           <h1 class="title"><span class="material-symbols-outlined">book</span>courses</h1>
+        <ul class="tabs">
+          <li data-tab-target="#add" class="active tab">
+            <span class="material-symbols-outlined">assignment_add</span>Assignment
+          </li>
+          <li data-tab-target="#view" class="tab">
+            <span class="material-symbols-outlined">add</span>Upload
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div id="add" data-tab-content class="active">
+            <div class="dashContainer">
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Assignment Date</th>
+                    <th>Assigned Course</th>
+                    <th>Assigned Batch</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  // include_once './server/connection.php';
+                  $sql = "SELECT assignmentDate,courseID,batchNo FROM instructor_assignment where intructorID='$Iid'";
+                  $result = mysqli_query($con, $sql);
+                  while ($row = $result->fetch_array()) {
+                    $Cid =  $row["courseID"];
+                    $sql2 = "SELECT courseName from course where  courseID = '$Cid'";
+                    $result2 = mysqli_query($con, $sql2);
+                    $row2 = mysqli_fetch_assoc($result2);
+                    echo "
+            <tr class='rows'>
+            <td>" . $row["assignmentDate"] . "</td>
+            <td>" . $row2["courseName"] . "</td>
+            <td>" . $row["batchNo"] . "</td>
+            
+            <tr>
+        ";
+                  }
+                  ?>
+                </tbody>
+              </table>
+            </div>
+            <div class="notification-table" >
+              
+              <table>
+                <thead>
+                <tr>
+                  <td><h2>Notification</h2></td>
+                </tr>
+                  <tr>
+                    <th>Name</th>
+                    <th>Meassage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td>Administrator</td>
+                    <td>No class on Monday and Tuesday</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="make-announcment">
+              <h1>Make announcment</h1>
+            </div>
+            </div>
+            <!-- dashContainer -->
+          </div>
+          <div id="view" data-tab-content>
+            <h1>Upload</h1>
+          </div>
+        </div>
         </div>
       </main>
     </div>
