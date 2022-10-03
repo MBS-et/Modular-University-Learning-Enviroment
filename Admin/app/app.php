@@ -99,8 +99,10 @@
               <span class="material-symbols-outlined">calendar_month</span
               >Calendar
             </li>
-            <li data-tab-target="#message" class="tab">
-              <span class="material-symbols-outlined">chat</span>Message
+            <li  class="tab">
+              <span class="material-symbols-outlined">chat</span>
+              <a href="../../ChatApp/index.php">Message
+              </a>
             </li>
             <li data-tab-target="#video" class="tab">
               <span class="material-symbols-outlined">video_chat</span><a href="./Stream/lobby.html">Video</a>
@@ -182,8 +184,7 @@
               </div>
             </div>
             <div id="message" data-tab-content>
-              <div class="main-body-mess"></div>
-            </div>
+             </div>
             <div id="video" data-tab-content>
               <h1>Video Chat</h1>
             </div>
