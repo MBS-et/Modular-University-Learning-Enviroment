@@ -5,15 +5,15 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instructors</title>
+  <title>Students</title>
   <!-- google icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link href="../img/main-logo.png" rel="icon">
   <!-- Main Body Css -->
   <link rel="stylesheet" href="../index.css" />
-  <link rel="stylesheet" href="assignment.css">
+  <link rel="stylesheet" href="assignment2.css">
   <link rel="stylesheet" href="./assignmentTab.css">
-  <link rel="stylesheet" href="./Table.css">
+  <link rel="stylesheet" href="./Table2.css">
 </head>
 
 <body>
@@ -165,12 +165,8 @@
               <table>
                 <thead>
                   <tr>
-                    <th>Instructor ID</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
-                    <th>Assignment Date</th>
-                    <th>Assigned Batch</th>
+                    <th>Batch No</th>
+                    <th>Assigned Date</th>
                     <th>Assigned Course</th>
                     <th>Actions</th>
                   </tr>
@@ -178,26 +174,19 @@
                 <tbody>
                   <?php
                   include_once './server/connection.php';
-                  $sql = "SELECT assignmentID,intructorID,assignmentDate,batchNo,courseID FROM instructor_assignment";
+                  $sql = "SELECT assignmentID,batchNo,assignmentDate,courseID FROM batch_assignment";
                   $result = mysqli_query($con, $sql);
                   while ($row = $result->fetch_array()) {
-                    $InstaId =  $row["intructorID"];
-                    $sql2 = "SELECT firstName,middleName,lasstName from instructor where  intructorID = '$InstaId'";
+                    $InstaId =  $row["courseID"];
+                    $sql2 = "SELECT courseName from course where  courseID = '$InstaId'";
                     $result2 = mysqli_query($con, $sql2);
                     $row2 = mysqli_fetch_assoc($result2);
-                    $CourseID =  $row["courseID"];
-                    $sql3 = "SELECT courseID from course where  courseID = '$CourseID'";
-                    $result3 = mysqli_query($con, $sql3);
-                    $row3 = mysqli_fetch_assoc($result3);
+            
                     echo "
             <tr class='rows'>
-            <td>" . $row["intructorID"] . "</td>
-            <td>" . $row2["firstName"] . "</td>
-            <td>" . $row2["middleName"] . "</td>
-            <td>" . $row2["lasstName"] . "</td>
-            <td>" . $row["assignmentDate"] . "</td>
             <td>" . $row["batchNo"] . "</td>
-            <td>" . $row3["courseID"] . "</td>
+            <td>" . $row["assignmentDate"] . "</td>
+            <td>" . $row2["courseName"] . "</td>
             <td> 
                  <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./server/dropAssignment.php?dropid=" . $row["assignmentID"] . "'>Drop</a>
             </td>

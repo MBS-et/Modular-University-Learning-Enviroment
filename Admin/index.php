@@ -178,7 +178,9 @@ echo "<h1 class='amt-active-Courses'>{$course_count}</h1>"
             <div class="right">
 
             </div>
-            
+            <div>
+              <H1>Hello World</H1>
+            </div>
         </div>
       </main>
     </div>
