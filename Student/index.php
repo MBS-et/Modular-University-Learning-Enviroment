@@ -31,6 +31,7 @@ if(isset($_GET['user']))
     <link href="../img/main-logo.png"   rel="icon">
     <!-- Main Body Css -->
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./dash.css">
     
   </head>
   <body>
@@ -83,73 +84,31 @@ if(isset($_GET['user']))
         </div>
       </aside>
       <main>
-        <div class="dashboard">
-            <div class="left">
-                <h1>Dashboard</h1>
-            <div class="insights">
-                <div class="dash-Instructors">
-                  <span class="material-symbols-outlined">groups</span>
-                  <div class="middle">
-                    <div class="left">
-                      <h3>Active Instructors</h3>
-                      <h1 class="amt-active-instructors">43</h1>
-                    </div>
-                    <div class="progress">
-                      <svg>
-                        <circle cx="38" cy="38" r="36"></circle>
-                      </svg>
-                      <div class="number">
-                        <p class="amt-active-instructors-inPercent">81%</p>
-                      </div>
-                      <small class="text-muted">Last 24 Hours</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="dash-Students">
-                  <span class="material-symbols-outlined">group</span>
-                  <div class="middle">
-                    <div class="left">
-                      <h3>Active Students</h3>
-                      <h1 class="amt-active-Students">600</h1>
-                    </div>
-                    <div class="progress">
-                      <svg>
-                        <circle cx="38" cy="38" r="36"></circle>
-                      </svg>
-                      <div class="number">
-                        <p class="amt-active-Students-inPercent">89%</p>
-                      </div>
-                      <small class="text-muted">Last 24 Hours</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="dash-Courses">
-                  <span class="material-symbols-outlined">menu_book</span>
-                  <div class="middle">
-                    <div class="left">
-                      <h3>Active Courses</h3>
-                      <h1 class="amt-active-Courses">25</h1>
-                    </div>
-                    <div class="progress">
-                      <svg>
-                        <circle cx="38" cy="38" r="36"></circle>
-                      </svg>
-                      <div class="number">
-                        <p class="amt-active-Courses-inPercent">61%</p>
-                      </div>
-                      <small class="text-muted">Last 24 Hours</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
+       
+      <div class="courses">
+          <h1 class="title">
+            <span class="material-symbols-outlined">view_list</span>My Learning
+          </h1>
+          <ul class="tabs">
+            <li data-tab-target="#course" class="active tab">
+              <span class="material-symbols-outlined">book</span>My Courses
+            </li>
+            <li data-tab-target="#resource" class="tab">
+              <span class="material-symbols-outlined">view_list</span>Course Material
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div id="course" data-tab-content class="active">
+              <h1>courses</h1>
             </div>
-            <div class="right">
-
+            <div id="resource" data-tab-content>
+              <h1>resourses</h1>
             </div>
-            
+          </div>
         </div>
       </main>
     </div>
+    <script src="./tab.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
