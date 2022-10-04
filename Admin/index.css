@@ -432,10 +432,9 @@ main {
     color: var(--bdy-background-light);
   }
 }
-.row {
-  display: flex;
-  margin: 30px;
-  padding: 30px 20px 20px 5px;
-  max-width: 1600px;
-  max-height: 500px;
+#columnchart_material {
+  margin-top: 15px;
+  height: 450px;
+  width: 1035px;
+  margin-bottom: -10px;
 }
