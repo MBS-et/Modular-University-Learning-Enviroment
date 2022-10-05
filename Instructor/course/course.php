@@ -32,7 +32,7 @@ if (isset($_POST['upload'])) { // If isset upload button or not
  
 	
 
-    $link2 = "http://localhost/M.U.L.E/Modular-University-Learning-Enviroment/Instructor/course/uploads/" . $file_new_name;
+    $link2 = "http://localhost/MULE/Modular-University-Learning-Enviroment/Instructor/course/uploads/" . $file_new_name;
 		$sql = "INSERT INTO uploaded_files (intructorID,batchNo,name, new_name,link)
 				VALUES ('$Iid','$batch','$file_name', '$file_new_name','$link2')";
 		$result = mysqli_query($conn, $sql);

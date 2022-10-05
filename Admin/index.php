@@ -35,7 +35,7 @@
                 </div>
                 <div class="profile">
                     <div class="user-information">
-                        <p>Hey,<b class="user-name">Peneal</b></p>
+                        <p>Hey,<b class="user-name">Admin</b></p>
                         <small class="text-muted" id="role">Admin</small>
                     </div>
                     <div class="profile-picture">
@@ -213,6 +213,7 @@ for($i=0;$i<3;$i++){
 
 
 
+
          
           
         ]);
@@ -222,7 +223,7 @@ for($i=0;$i<3;$i++){
             title: '',
             subtitle: '',
          
-          },colors:['#7a5a78','#ffffff','#ffffff'],
+          },colors:['#6941c6','#6941c6','#6941c6'],
           
         };
 
