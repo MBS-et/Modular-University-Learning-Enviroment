@@ -30,8 +30,9 @@ if(isset($_GET['user']))
     />
     <link href="../img/main-logo.png"   rel="icon">
     <!-- Main Body Css -->
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./index2.css" />
     <link rel="stylesheet" href="./dash.css">
+    <link rel="stylesheet" href="studentTable.css">
     
   </head>
   <body>
@@ -93,17 +94,60 @@ if(isset($_GET['user']))
             <li data-tab-target="#course" class="active tab">
               <span class="material-symbols-outlined">book</span>My Courses
             </li>
-            <li data-tab-target="#resource" class="tab">
+            <!-- <li data-tab-target="#resource" class="tab">
               <span class="material-symbols-outlined">view_list</span>Course Material
-            </li>
+            </li> -->
           </ul>
           <div class="tab-content">
             <div id="course" data-tab-content class="active">
-              <h1>courses</h1>
+
+            <div class="table-container">
+            <!-- <h1>Assigned courses</h1>   -->
+            <table>
+              
+                <thead>
+                  <tr>
+                  <th>Course ID</th>
+                  <th>Course Name</th>
+                   <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <!--  -->
+<?php
+include_once './server/connection.php';
+$sql="SELECT courseID  from  batch_assignment where  batchNo='$batchNo' ";
+
+$result=mysqli_query($con,$sql);
+$sql3="SELECT link from uploaded_files where batchNo='$batchNo' ";
+$result3=mysqli_query($con,$sql3);
+$row3=mysqli_fetch_assoc($result3);
+
+while($row=$result->fetch_array()){
+$courseID=$row["courseID"];
+ $sql2="SELECT courseName from course where courseID='$courseID'";
+ $result2=mysqli_query($con,$sql2);
+ $row2 = mysqli_fetch_assoc($result2);
+ echo "
+
+            <tr class='rows'>
+            <td>" . $row["courseID"] . "</td>
+           <td>" . $row2["courseName"] . "</td>
+           <td> <a href='".$row3["link"]."'>Download Resources<a/></td>
+
+          <tr>";
+
+}
+
+?>   
+         </tbody>
+              </table>
             </div>
-            <div id="resource" data-tab-content>
-              <h1>resourses</h1>
-            </div>
+          </div>
+
+
+          <!--  -->
+          
           </div>
         </div>
       </main>
@@ -112,3 +156,6 @@ if(isset($_GET['user']))
     <script src="./index.js"></script>
   </body>
 </html>
+  
+
+ 

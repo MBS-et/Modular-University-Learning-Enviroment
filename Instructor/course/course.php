@@ -30,10 +30,15 @@ if (isset($_POST['upload'])) { // If isset upload button or not
   $file_size = $_FILES["file"]["size"]; // Get uploaded file size
   $batch = $_POST['batch'];
 
+<<<<<<< HEAD
 
 
   $link2 = "http://localhost/M.U.L.E/Modular-University-Learning-Enviroment/Instructor/course/uploads/" . $file_new_name;
   $sql = "INSERT INTO uploaded_files (intructorID,batchNo,name, new_name,link)
+=======
+    $link2 = "http://localhost/MULE/Modular-University-Learning-Enviroment/Instructor/course/uploads/" . $file_new_name;
+		$sql = "INSERT INTO uploaded_files (intructorID,batchNo,name, new_name,link)
+>>>>>>> 48cd3ea90cdae209b486ba90faa9a9cf9614ef3c
 				VALUES ('$Iid','$batch','$file_name', '$file_new_name','$link2')";
   $result = mysqli_query($conn, $sql);
   if ($result) {

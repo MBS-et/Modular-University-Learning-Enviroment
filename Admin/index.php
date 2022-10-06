@@ -35,7 +35,7 @@
                 </div>
                 <div class="profile">
                     <div class="user-information">
-                        <p>Hey,<b class="user-name">Peneal</b></p>
+                        <p>Hey,<b class="user-name">Admin</b></p>
                         <small class="text-muted" id="role">Admin</small>
                     </div>
                     <div class="profile-picture">
@@ -180,12 +180,12 @@ echo "<h1 class='amt-active-Courses'>{$course_count}</h1>"
             <div class="right">
 
             </div>
-<<<<<<< HEAD
-            <div>
+<!-- <<<<<<< HEAD -->
+            <!-- <div>
               <H1>Hello World</H1>
-            </div>
+            </div> -->
         </div>
-=======
+<!-- ======= -->
            
             
 <!--  -->
@@ -197,18 +197,34 @@ echo "<h1 class='amt-active-Courses'>{$course_count}</h1>"
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
+          ['Data', 'Total'],
+
+                          <?php
+$element_text=['Active Instructors','Active Students','Active Courses'];
+$element_count=[$instructor_count,$student_count,$course_count];
+
+for($i=0;$i<3;$i++){
+
+  echo "['{$element_text[$i]}'" .","."{$element_count[$i]}],";
+}
+
+  ?>
+
+
+
+
+
+         
+          
         ]);
 
         var options = {
           chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-          }
+            title: '',
+            subtitle: '',
+         
+          },colors:['#6941c6','#6941c6','#6941c6'],
+          
         };
 
         var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
@@ -217,12 +233,12 @@ echo "<h1 class='amt-active-Courses'>{$course_count}</h1>"
       }
     </script>
 
-    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+    <div id="columnchart_material" style="  padding: 10px;  "></div>
 
 
           </div>
           
->>>>>>> 40e60ddb0bbd31b6046c14f2bc036bb697acda68
+<!-- >>>>>>> 40e60ddb0bbd31b6046c14f2bc036bb697acda68 -->
       </main>
     </div>
     <script src="./index.js"></script>
