@@ -1,3 +1,19 @@
+<?php
+
+include_once './server/connection.php';
+if(isset($_GET['updateId']))
+{
+$id = $_GET['updateId'];
+$sql="SELECT * FROM department WHERE departmentID = '$id'";
+  $result=mysqli_query($con,$sql);
+ $row=mysqli_fetch_assoc($result);
+ $departmentID=$row["departmentID"];
+ $departmentName= $row["departmentName"];
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -92,10 +108,7 @@
           </h1>
           <ul class="tabs">
             <li data-tab-target="#add" class="active tab">
-              <span class="material-symbols-outlined">add</span>Add
-            </li>
-            <li data-tab-target="#view" class="tab">
-              <span class="material-symbols-outlined">view_list</span>View
+              <span class="material-symbols-outlined">edit</span>Update
             </li>
           </ul>
           <div class="tab-content">
@@ -103,7 +116,7 @@
               <div class="Course-form">
                 <!-- container -->
                 <h1>Department Registration Form</h1>
-                <form action="./server/addDepartment.php" method="POST">
+                <form action="./server/editDepartment.php" method="POST">
                   <div class="formFirst">
                     <!-- first form container -->
                     <div class="courseDetails">
@@ -117,7 +130,8 @@
                             type="text"
                             name ="id"
                             placeholder="Enter Department Id"
-                            required
+                            readonly
+                            value="<?php echo "$departmentID" ?>"
                           />
                         </div>
                         <div class="input-field">
@@ -127,13 +141,14 @@
                             name = "name"
                             placeholder="Enter Department Name"
                             required
+                            value="<?php echo "$departmentName" ?>"
                           />
                         </div>
                         <div class="buttons">
                           <div class="submitbutton">
                             <button type="submit" name="submit">
                               <i class="material-symbols-outlined">save</i>
-                              <span class="btnText">Submit</span>
+                              <span class="btnText">Save Changes</span>
                             </button>
                           </div>
                         </div>
@@ -148,40 +163,6 @@
 
                 <!-- container -->
               </div>
-            </div>
-            <div id="view" data-tab-content>
-            <div class="table-container">
-              <!-- table container -->
-              <table>
-                <thead>
-                  <tr>
-                    <th>Department ID</th>
-                    <th>department Name</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                <?php
-                  include_once './server/connection.php';
-                  $sql = "SELECT departmentID,departmentName from department";
-
-                  $result = mysqli_query($con, $sql);
-                  while ($row = $result->fetch_array()) {
-                    echo "
-<tr class='rows'>
-<td>" . $row["departmentID"] . "</td>
-<td>" . $row["departmentName"] . "</td>
-<td> 
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./editDepartment.php?updateId=" . $row["departmentID"] . "'>Edit</a>
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./server/deleteDepartment.php?updateId=" . $row["departmentID"] . "'>Delete</a>
-            </td> 
-<tr>";
-                  } ?>
-                </tbody>
-              </table>
-
-              <!-- table container -->
-            </div>
             </div>
           </div>
         </div>

@@ -1,3 +1,30 @@
+<?php
+include_once './server/connection.php';
+
+if(isset($_GET['updateid']))
+{
+  $id = $_GET['updateid'];
+  $sql = "SELECT * FROM instructor where intructorID = '$id' ";
+  $result = mysqli_query($con, $sql);
+  $row=mysqli_fetch_assoc($result);
+  $roleID= $row['roleID'];
+  $sql2 = "SELECT roleType FROM role where roleID = '$roleID'";
+  $result2 = mysqli_query($con, $sql2);
+  $row2=mysqli_fetch_assoc($result2);
+
+  $userName=$row['userName'];
+  $email = $row['email'];
+  $fname= $row['firstName'];
+  $gender = $row['gender'];
+  $lname= $row['lasstName'];
+  $mname= $row['middleName'];
+  $mnumber=$row['mobileNumber'];
+  $role = $row2['roleType'];
+  $pass = $row['password'];
+}
+
+                  
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,13 +120,7 @@
         </h1>
         <ul class="tabs">
           <li data-tab-target="#add" class="active tab">
-            <span class="material-symbols-outlined">add</span>Add
-          </li>
-          <li data-tab-target="#view" class="tab">
-            <span class="material-symbols-outlined">view_list</span>View
-          </li>
-          <li data-tab-target="#assign" class="tab">
-            <span class="material-symbols-outlined">assignment_add</span>Assign
+            <span class="material-symbols-outlined">edit</span>Update
           </li>
         </ul>
         <div class="tab-content">
@@ -107,7 +128,7 @@
             <div class="Instructor-form">
               <!-- instructor form conatiner -->
               <h1>Instructor Registration Form</h1>
-              <form action="./server/addInstructor.php" method="POST">
+              <form action="./server/editInstructor.php" method="POST">
                 <div class="formFirst">
                   <!-- 1st form conatiner -->
                   <div class="personalDetails">
@@ -117,27 +138,28 @@
                       <!-- fields for personal details -->
                       <div class="input-field">
                         <label>First Name</label>
-                        <input type="text" name="Fname" placeholder="Enter user's First Name" required />
+                        <input type="text" name="Fname" placeholder="Enter user's First Name" required value="<?php echo $fname;?>" />
                       </div>
                       <div class="input-field">
                         <label>Middle Name</label>
-                        <input type="text" name="Mname" placeholder="Enter user's Middle Name" required />
+                        <input type="text" name="Mname" placeholder="Enter user's Middle Name" required value=<?php echo $mname;?> />
                       </div>
                       <div class="input-field">
                         <label>Last Name</label>
-                        <input type="text" name="Lname" placeholder="Enter user's Last Name" required />
+                        <input type="text" name="Lname" placeholder="Enter user's Last Name" required value=<?php echo $lname;?> />
                       </div>
                       <div class="input-field">
                         <label>Gender</label>
                         <select name="gender" required>
                           <option disabled selected>Select gender</option>
+                          <option selected> <?php echo $gender; ?> </option>
                           <option>Male</option>
                           <option>Female</option>
                         </select>
                       </div>
                       <div class="input-field">
                         <label>Mobile Number</label>
-                        <input type="number" name="Mnumber" placeholder="Enter mobile number" required />
+                        <input type="number" name="Mnumber" placeholder="Enter mobile number" required value=<?php echo $mnumber;?> />
                       </div>
                       <div class="input-field"></div>
                     </div>
@@ -150,12 +172,13 @@
                       <!-- field for acocunt details -->
                       <div class="input-field">
                         <label>Instructor ID</label>
-                        <input type="text" name="id" placeholder="Enter instructors ID" />
+                        <input type="text" name="id" placeholder="Enter instructors ID" readonly value=<?php echo $id;?> />
                       </div>
                       <div class="input-field">
                         <label>Role</label>
                         <select name="role" required>
                           <option disabled selected>Select Role</option>
+                          <option selected> <?php echo $role;?></option>
                           <?php
                           include_once './server/connection.php';
                           $sql = "SELECT `roleType` FROM `role`";
@@ -168,23 +191,23 @@
                       </div>
                       <div class="input-field">
                         <label>User Name</label>
-                        <input type="text" name="Uname" placeholder="Enter The user's user name " required />
+                        <input type="text" name="Uname" placeholder="Enter The user's user name " required value=<?php echo $userName;?> />
                       </div>
                       <div class="input-field">
                         <label>Password</label>
-                        <input type="password" name="password" placeholder="Enter  user's Password " required />
+                        <input type="password" name="password" placeholder="Enter  user's Password " required value=<?php echo $pass;?> />
                       </div>
                       <div class="input-field">
                         <label>Confirm Password</label>
-                        <input type="password" placeholder="confirm user's password " required />
+                        <input type="password" placeholder="confirm user's password " required  value=<?php echo $pass;?> />
                       </div>
                       <div class="input-field">
                         <label>Email</label>
-                        <input type="email" name="email" placeholder="www.example@gmail.com" required />
+                        <input type="email" name="email" placeholder="www.example@gmail.com" required value=<?php echo $email;?> />
                       </div>
                       <div class="buttons">
                         <button type="submit" name="submit" class="submit">
-                          <span class="btnText">Submit</span>
+                          <span class="btnText">Save Changes</span>
                           <i class="uil uil-save"></i>
                         </button>
                       </div>
@@ -198,125 +221,7 @@
               <!-- instructor form conatiner -->
             </div>
           </div>
-          <div id="view" data-tab-content>
-            <div class="table-container">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Instructor ID</th>
-                    <th>Username</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
-                    <th>Moblie</th>
-                    <th>Gender</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  include_once './server/connection.php';
-                  $sql = "SELECT intructorID,userName,firstName,middleName,lasstName,mobileNumber,gender,email,roleID FROM instructor";
-                  $result = mysqli_query($con, $sql);
-                  while ($row = $result->fetch_array()) {
-                    $roleId =  $row["roleID"];
-                    $sql2 = "SELECT roleType from role where  roleID = '$roleId'";
-                    $result2 = mysqli_query($con, $sql2);
-                    $row2 = mysqli_fetch_assoc($result2);
-                    echo "
-            <tr class='rows'>
-            <td>" . $row["intructorID"] . "</td>
-            <td>" . $row["userName"] . "</td>
-            <td>" . $row["firstName"] . "</td>
-            <td>" . $row["middleName"] . "</td>
-            <td>" . $row["lasstName"] . "</td>
-            <td>" . $row["mobileNumber"] . "</td>
-            <td>" . $row["gender"] . "</td>
-            <td>" . $row["email"] . "</td>
-            <td>" . $row2["roleType"] . "</td>
-            <td> 
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./editInstructor.php?updateid=" . $row["intructorID"] . "'>Edit</a>
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./server/deleteInstructor.php?updateid=" . $row["intructorID"] . "&username=".$row["userName"]."'>Delete</a>
-            </td>
-            <tr>
-        ";
-                  }
-                  ?>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div id="assign" data-tab-content>
-            <div class="Assignment-form">
-              <form action="./server/FindAssignment.php" method="POST">
-                <span class="title">Instructor Assignment</span>
-                <div class="fields">
-                  <div class="input-field">
-                    <label>Instructor ID</label>
-                    <input type="text" name="InID" placeholder="Search here" required />
-                  </div>
-                  <div class="buttons">
-                    <button type="submit" name="submit" class="submit">
-                      <span class="btnText">Search</span>
-                      <i class="uil uil-search"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <hr>
-            <div class="table-container-assign">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Instructor ID</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
-                    <th>Assignment Date</th>
-                    <th>Assigned Batch</th>
-                    <th>Assigned Course</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  include_once './server/connection.php';
-                  $sql = "SELECT assignmentID,intructorID,assignmentDate,batchNo,courseID FROM instructor_assignment";
-                  $result = mysqli_query($con, $sql);
-                  while ($row = $result->fetch_array()) {
-                    $InstaId =  $row["intructorID"];
-                    $sql2 = "SELECT firstName,middleName,lasstName from instructor where  intructorID = '$InstaId'";
-                    $result2 = mysqli_query($con, $sql2);
-                    $row2 = mysqli_fetch_assoc($result2);
-                    $CourseID =  $row["courseID"];
-                    $sql3 = "SELECT courseID from course where  courseID = '$CourseID'";
-                    $result3 = mysqli_query($con, $sql3);
-                    $row3 = mysqli_fetch_assoc($result3);
-                    echo "
-            <tr class='rows'>
-            <td>" . $row["intructorID"] . "</td>
-            <td>" . $row2["firstName"] . "</td>
-            <td>" . $row2["middleName"] . "</td>
-            <td>" . $row2["lasstName"] . "</td>
-            <td>" . $row["assignmentDate"] . "</td>
-            <td>" . $row["batchNo"] . "</td>
-            <td>" . $row3["courseID"] . "</td>
-            <td> 
-                 <a class='btn btn-primary' role='button' data-bs-toggle='button' href='./server/dropAssignment.php?dropid=" . $row["assignmentID"] . "'>Drop</a>
-            </td>
-            <tr>
-        ";
-                  }
-                  ?>
-                </tbody>
-              </table>
-            </div>
-
-          </div>
-        </div>
+          
       </div>
     </main>
   </div>

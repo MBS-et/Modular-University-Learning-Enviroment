@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-   <link rel="stylesheet" href="./login.css">
+   <link rel="stylesheet" href="./login2.css">
    <link href="img/main-logo.png"   rel="icon">
    
 </head>
 <body>
-    <h2>MBS The Best E-learning Platform</h2>
+    <section>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="#">
@@ -52,6 +52,7 @@
             </div>
         </div>
     </div>
+    </section>
     <script src="./login.js"></script>
     
 </body>

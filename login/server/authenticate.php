@@ -31,7 +31,6 @@ if($type== "University")
        
     }
 
-    
 }else if($type== "Instructor")
 {
     $sql = "SELECT password FROM instructor WHERE userName='$username';";

@@ -30,6 +30,9 @@
 
 .make-announcment
 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
     width: 655px;
     margin-left: 20px;
     padding: 20px;
@@ -37,4 +40,25 @@
     height: 280px;
     border-radius: var(--border-radius-1);
     background-color: var(--dash-card-light);
+}
+.textarea{
+  background-color: var(--dash-card-light);
+  padding: 5px;
+  width: 90px;
+  color: var(--text-light);
+  border-radius: 10px;
+  border: 1px solid black;
+  outline: none;
+  transition: all 0.2s;
+  margin-left: 80px;
+  box-sizing: border-box;
+  width: 175%;
+
+}
+.textarea:hover{
+  cursor: pointer;
+}
+.textarea:focus
+{
+  cursor: text;
 }

@@ -18,10 +18,14 @@
 
     $sql1 = "INSERT INTO instructor_assignment (assignmentDate,batchNo,courseID,intructorID) VALUES ('$date','$batch','$courseId','$Id')";
     $result2 = mysqli_query($con,$sql1);
-
-    header("Location: ../instructor.php?Success");
+    if($result2==true)
+    {
+      echo '<script>alert("Instructor Assigned Successfully")</script>';
+      header("Location: ../instructor.php?Success");
+    }
+  
   }else
   {
-   
+    echo "<script>alert('Instructor Assignment Failed')</script>";
     header("Location: ../instructor.php?Failed");
   }
