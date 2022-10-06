@@ -76,10 +76,6 @@
             <span class="material-symbols-outlined">apps</span>
             <h3>Apps</h3>
           </a>
-          <a href="../settings/settings.php" id="sett">
-            <span class="material-symbols-outlined">settings</span>
-            <h3>Settings</h3>
-          </a>
           <a href="../../login/login.php" id="logout">
             <span class="material-symbols-outlined">logout</span>
             <h3>Logout</h3>
@@ -105,7 +101,7 @@
               </a>
             </li>
             <li  class="tab">
-              <span class="material-symbols-outlined">video_chat</span><a href="./Chat/index.php">Video</a>
+              <span class="material-symbols-outlined">video_chat</span><a href="./Stream/lobby.html">Video</a>
             </li>
           </ul>
           <div class="tab-content">

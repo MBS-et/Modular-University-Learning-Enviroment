@@ -43,7 +43,7 @@ if($type== "University")
         $Upassword = $row[0];
         if($Upassword==$pass)
         {
-            header("Location: ../../Instructor/index.php?user=". $username ."");
+            header("Location: ../../Instructor/course/course.php?user=". $username ."");
         }else
         {
 

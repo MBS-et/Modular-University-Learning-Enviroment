@@ -131,10 +131,6 @@ select {
     <aside>
 
       <div class="sidebar">
-        <a href="../index.php?user=<?php echo $id; ?>" id="dash">
-          <span class="material-symbols-outlined">dashboard</span>
-          <h3>Dashboard</h3>
-        </a>
         <a href="./course.php?user=<?php echo $id; ?>" class="active" id="cor">
           <span class="material-symbols-outlined">home</span>
           <h3>Home</h3>
@@ -155,10 +151,9 @@ select {
     </aside>
     <main>
       <div class="courses">
-        <h1 class="title"><span class="material-symbols-outlined">book</span>courses</h1>
         <ul class="tabs">
           <li data-tab-target="#add" class="active tab">
-            <span class="material-symbols-outlined">assignment_add</span>Assignment
+            <span class="material-symbols-outlined">dashboard</span>Dashboard
           </li>
           <li data-tab-target="#view" class="tab">
             <span class="material-symbols-outlined">add</span>Upload
