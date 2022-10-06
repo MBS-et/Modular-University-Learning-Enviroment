@@ -116,26 +116,41 @@ if(isset($_GET['user']))
                 <!--  -->
 <?php
 include_once './server/connection.php';
-$sql="SELECT courseID  from  batch_assignment where  batchNo='$batchNo' ";
 
-$result=mysqli_query($con,$sql);
-$sql3="SELECT link from uploaded_files where batchNo='$batchNo' ";
-$result3=mysqli_query($con,$sql3);
-$row3=mysqli_fetch_assoc($result3);
+$sql="SELECT * from batch_assignment where batchNo = '$batchNo'";
 
+$result = mysqli_query($con,$sql);
 while($row=$result->fetch_array()){
-$courseID=$row["courseID"];
- $sql2="SELECT courseName from course where courseID='$courseID'";
- $result2=mysqli_query($con,$sql2);
- $row2 = mysqli_fetch_assoc($result2);
- echo "
+$courseIDs = $row["courseID"];
+
+$sql2= "SELECT link from uploaded_files where batchNo = '$batchNo' AND courseID = '$courseIDs'";
+$result2 = mysqli_query($con,$sql2);
+$row2= mysqli_fetch_assoc($result2);
+if($row2==NULL)
+{
+  $sql3="SELECT courseName from course where courseID='$courseIDs'";
+  $result3=mysqli_query($con,$sql3);
+  $row3 = mysqli_fetch_assoc($result3);
+  echo "
 
             <tr class='rows'>
             <td>" . $row["courseID"] . "</td>
-           <td>" . $row2["courseName"] . "</td>
-           <td> <a href='".$row3["link"]."'>Download Resources<a/></td>
-
+           <td>" . $row3["courseName"] . "</td>
+           <td>No Resources</td>
           <tr>";
+}
+else
+{
+  $sql3="SELECT courseName from course where courseID='$courseIDs'";
+  $result3=mysqli_query($con,$sql3);
+  $row3 = mysqli_fetch_assoc($result3);
+  echo "
+  <tr class='rows'>
+  <td>" . $row["courseID"] . "</td>
+  <td>" . $row3["courseName"] . "</td>
+  <td> <a href='".$row2["link"]."'>Download Resources<a/></td>
+<tr>";
+}
 
 }
 

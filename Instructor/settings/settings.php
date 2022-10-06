@@ -63,9 +63,13 @@ if(isset($_GET['user']))
       <aside>
         
         <div class="sidebar">
+          <a href="../index.php?user=<?php echo $id; ?>"  id="dash">
+            <span class="material-symbols-outlined">dashboard</span>
+            <h3>Dashboard</h3>
+        </a>
         <a href="../course/course.php?user=<?php echo $id; ?>" id="cor">
-            <span class="material-symbols-outlined">home</span>
-            <h3>Home</h3>
+            <span class="material-symbols-outlined">library_books</span>
+            <h3>Courses</h3>
         </a>
         <a href="../app/app.php?user=<?php echo $id; ?>"  id="app">
             <span class="material-symbols-outlined">apps</span>

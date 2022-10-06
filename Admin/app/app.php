@@ -101,11 +101,11 @@
             </li>
             <li  class="tab">
               <span class="material-symbols-outlined">chat</span>
-              <a href="../../ChatApp/">Message
+              <a href="./Chat/index.php">Message
               </a>
             </li>
             <li  class="tab">
-              <span class="material-symbols-outlined">video_chat</span><a href="./Stream/lobby.html">Video</a>
+              <span class="material-symbols-outlined">video_chat</span><a href="./Chat/index.php">Video</a>
             </li>
           </ul>
           <div class="tab-content">

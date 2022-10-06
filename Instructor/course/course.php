@@ -22,37 +22,38 @@ $link = "/uploads";
 $link_status = "display: none;";
 
 if (isset($_POST['upload'])) { // If isset upload button or not
-  // Declaring Variables
-  $location = "uploads/";
-  $file_new_name = date("dmy") . time() . $_FILES["file"]["name"]; // New and unique name of uploaded file
-  $file_name = $_FILES["file"]["name"]; // Get uploaded file name
-  $file_temp = $_FILES["file"]["tmp_name"]; // Get uploaded file temp
-  $file_size = $_FILES["file"]["size"]; // Get uploaded file size
+	// Declaring Variables
+	$location = "uploads/";
+	$file_new_name = date("dmy") . time() . $_FILES["file"]["name"]; // New and unique name of uploaded file
+	$file_name = $_FILES["file"]["name"]; // Get uploaded file name
+	$file_temp = $_FILES["file"]["tmp_name"]; // Get uploaded file temp
+	$file_size = $_FILES["file"]["size"]; // Get uploaded file size
   $batch = $_POST['batch'];
+  $course = $_POST['course'];
+ 
+	$sql2 = "SELECT courseID from course where  courseName = '$course'";
+  $result2 = mysqli_query($con, $sql2);
+  $row2 = mysqli_fetch_assoc($result2);
+  $couresId = $row2["courseID"];
 
-<<<<<<< HEAD
-
-
-  $link2 = "http://localhost/M.U.L.E/Modular-University-Learning-Enviroment/Instructor/course/uploads/" . $file_new_name;
-  $sql = "INSERT INTO uploaded_files (intructorID,batchNo,name, new_name,link)
-=======
-    $link2 = "http://localhost/MULE/Modular-University-Learning-Enviroment/Instructor/course/uploads/" . $file_new_name;
-		$sql = "INSERT INTO uploaded_files (intructorID,batchNo,name, new_name,link)
->>>>>>> 48cd3ea90cdae209b486ba90faa9a9cf9614ef3c
-				VALUES ('$Iid','$batch','$file_name', '$file_new_name','$link2')";
-  $result = mysqli_query($conn, $sql);
-  if ($result) {
-    move_uploaded_file($file_temp, $location . $file_new_name);
-
-    // Select id from database
-    $sql = "SELECT id FROM uploaded_files ORDER BY id DESC";
-    $result = mysqli_query($conn, $sql);
-    if ($row = mysqli_fetch_assoc($result)) {
-      $link = $base_url . "download.php?id=" . $row['id'];
-      $link_status = "display: block;";
-    }
-  } else {
-  }
+    $link2 = "http://localhost/MULE2/Modular-University-Learning-Enviroment-1/Instructor/course/uploads/" . $file_new_name;
+		$sql = "INSERT INTO uploaded_files (intructorID,batchNo,courseID,name, new_name,link)
+				VALUES ('$Iid','$batch','$couresId','$file_name','$file_new_name','$link2')";
+		$result = mysqli_query($conn, $sql);
+		if ($result) {
+			move_uploaded_file($file_temp, $location . $file_new_name);
+			
+			// Select id from database
+			$sql = "SELECT id FROM uploaded_files ORDER BY id DESC";
+			$result = mysqli_query($conn, $sql);
+			if ($row = mysqli_fetch_assoc($result)) {
+				$link = $base_url . "download.php?id=" . $row['id'];
+				$link_status = "display: block;";
+			}
+		} else {
+			
+		}
+	
 }
 
 ?>
@@ -67,35 +68,34 @@ if (isset($_POST['upload'])) { // If isset upload button or not
   <!-- google icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <!-- Main Body Css -->
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 
   <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="./AssignForm.css">
   <link rel="stylesheet" href="./course.css">
   <link rel="stylesheet" href="./instructorAssignedTable.css">
-  <link rel="stylesheet" href="./dashlayout.css">
+  <link rel="stylesheet" href="./dashlayout2.css">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="./AssignForm.css">
   <style>
     .input-field input,
-    select {
-      outline: none;
-      font-size: 14px;
-      font-weight: 400;
-      color: #333;
-      border-radius: 5px;
-      border: 1px solid #aaa;
-      padding: 0 15px;
-      height: 42px;
-      margin: 8px 0;
-    }
-
-    .input-field input :focus,
-    .input-field select:focus {
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
-    }
+select {
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
   </style>
 </head>
 
@@ -131,6 +131,10 @@ if (isset($_POST['upload'])) { // If isset upload button or not
     <aside>
 
       <div class="sidebar">
+        <a href="../index.php?user=<?php echo $id; ?>" id="dash">
+          <span class="material-symbols-outlined">dashboard</span>
+          <h3>Dashboard</h3>
+        </a>
         <a href="./course.php?user=<?php echo $id; ?>" class="active" id="cor">
           <span class="material-symbols-outlined">home</span>
           <h3>Home</h3>
@@ -151,10 +155,10 @@ if (isset($_POST['upload'])) { // If isset upload button or not
     </aside>
     <main>
       <div class="courses">
-        <!-- <h1 class="title"><span class="material-symbols-outlined">book</span>courses</h1> -->
+        <h1 class="title"><span class="material-symbols-outlined">book</span>courses</h1>
         <ul class="tabs">
           <li data-tab-target="#add" class="active tab">
-            <span class="material-symbols-outlined">dashboard</span>Dashboard
+            <span class="material-symbols-outlined">assignment_add</span>Assignment
           </li>
           <li data-tab-target="#view" class="tab">
             <span class="material-symbols-outlined">add</span>Upload
@@ -274,7 +278,7 @@ if (isset($_POST['upload'])) { // If isset upload button or not
                 </table>
               </div>
               <div class="make-announcment">
-                <div class="Instructor-form">
+              <div class="Instructor-form">
                   <form action="./server/announcement.php" method="POST">
                     <span class="title">Make Announcement</span>
                     <div class="fields">
@@ -295,7 +299,7 @@ if (isset($_POST['upload'])) { // If isset upload button or not
                           ?>
                         </select>
                       </div>
-                     
+              
                       <div class="input-field">
                         <label style="margin-left: 90px; margin-bottom: 15px;">Message</label>
                         <textarea name="message" class="textarea" cols="50" rows="4" placeholder="Message"></textarea>
@@ -314,50 +318,74 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 
               </div>
             </div>
+            </div>
             <!-- dashContainer -->
           </div>
           <div id="view" data-tab-content>
             <div style="display: flex; justify-content:center;align-items:center">
-              <div class="file__upload">
-                <div class="header">
-                  <p><i class="fa fa-cloud-upload fa-2x"></i><span><span>up</span>load</span></p>
-                </div>
+            <div class="file__upload" >
+              <div class="header">
+                <p><i class="fa fa-cloud-upload fa-2x"></i><span><span>up</span>load</span></p>
+              </div>
+              
+              <form action="" method="POST" enctype="multipart/form-data" class="body">
+              <div class="input-field">
+                <label>Batch</label>
+                <select name="batch" required>
+                          <option disabled selected>Select batch</option>
+                          <?php
+                          include_once './server/connection.php';
 
-                <form action="" method="POST" enctype="multipart/form-data" class="body">
-                  <div class="input-field">
-                    <h2>Batch</h>
-                      <select name="batch" required>
-                        <option disabled selected>Select batch</option>
-                        <?php
-                        include_once './server/connection.php';
-
-                        $sql = "SELECT * FROM student_batchs";
-                        $result = mysqli_query($con, $sql);
-                        while ($row = $result->fetch_array()) {
-                          echo "
+                          $sql = "SELECT * FROM student_batchs";
+                          $result = mysqli_query($con, $sql);
+                          while ($row = $result->fetch_array()) {
+                            echo "
                               <option>" . $row["batchNo"] . "</option>
                               ";
-                        }
-                        ?>
-                      </select>
-                  </div>
-                  <!-- Sharable Link Code -->
-                  <input type="checkbox" id="link_checkbox">
-
-
-                  <input type="file" name="file" id="upload" required>
-                  <label for="upload">
-                    <i class="fa fa-file-text-o fa-3x"></i>
-                    <p>
-                      <strong>Drag and drop</strong> files here<br>
-                      or <span>browse</span> to begin the upload
-                    </p>
-                  </label>
-                  <button name="upload" class="btn">Upload</button>
-                </form>
+                          }
+                          ?>
+                        </select>
               </div>
-            </div>
+              <div class="input-field">
+                        <label>course</label>
+                        <select name="course" required>
+                          <option disabled selected>Select Course</option>
+                          <?php
+                          include_once './server/connection.php';
 
+                          $sql = "SELECT courseID FROM instructor_assignment where intructorID = '$Iid'";
+                          $result = mysqli_query($con, $sql);
+                          while ($row = $result->fetch_array()) {
+                            $couresid = $row["courseID"];
+                            $sql2 = "SELECT courseName FROM course where courseID = '$couresid'";
+                            $result2 = mysqli_query($con,$sql2);
+                            $row2 = mysqli_fetch_array($result2);
+                            echo "
+                              <option>" . $row2[0] . "</option>
+                              ";
+                          }
+
+
+                          ?>
+                        </select>
+                      </div>
+                <!-- Sharable Link Code -->
+                <input type="checkbox" id="link_checkbox">
+                
+
+                <input type="file" name="file" id="upload" required>
+                <label for="upload">
+                  <i class="fa fa-file-text-o fa-3x"></i>
+                  <p>
+                    <strong>Drag and drop</strong> files here<br>
+                    or <span>browse</span> to begin the upload
+                  </p>
+                </label>
+                <button name="upload" class="btn">Upload</button>
+              </form>
+            </div>
+            </div>
+            
           </div>
         </div>
       </div>
