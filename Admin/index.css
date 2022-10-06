@@ -267,7 +267,7 @@ main {
 }
 .dashboard .insights {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr); /*  changed to 5 from 3*/
   gap: 1.6rem;
 }
 .dashboard .insights > div {
@@ -433,8 +433,10 @@ main {
   }
 }
 #columnchart_material {
+  display: flex;
+  justify-content: center;
   margin-top: 15px;
   height: 450px;
-  width: 1035px;
+  max-width: 1210px;
   margin-bottom: -10px;
 }

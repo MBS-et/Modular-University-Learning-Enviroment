@@ -89,7 +89,9 @@
             <div class="left">
                 <h1>Dashboard</h1>
             <div class="insights">
+              <!-- insights -->
                 <div class="dash-Instructors">
+                  <!-- instruct -->
                   <span class="material-symbols-outlined">groups</span>
                   <div class="middle">
                     <div class="left">
@@ -107,17 +109,10 @@ echo "<h1 class='amt-active-instructors'>{$instructor_count}</h1> ";
 
 
                     </div>
-                    <div class="progress">
-                      <svg>
-                        <circle cx="38" cy="38" r="36"></circle>
-                      </svg>
-                      <div class="number">
-                        <p class="amt-active-instructors-inPercent">81%</p>
-                      </div>
-                      <small class="text-muted">Last 24 Hours</small>
-                    </div>
+                    
                   </div>
                 </div>
+                <!-- student -->
                 <div class="dash-Students">
                   <span class="material-symbols-outlined">group</span>
                   <div class="middle">
@@ -133,17 +128,12 @@ echo "<h1 class='amt-active-Students'>{$student_count}</h1> ";
 
                       
                     </div>
-                    <div class="progress">
-                      <svg>
-                        <circle cx="38" cy="38" r="36"></circle>
-                      </svg>
-                      <div class="number">
-                        <p class="amt-active-Students-inPercent">89%</p>
-                      </div>
-                      <small class="text-muted">Last 24 Hours</small>
-                    </div>
+                    
+
                   </div>
+
                 </div>
+                <!-- courses -->
                 <div class="dash-Courses">
                   <span class="material-symbols-outlined">menu_book</span>
                   <div class="middle">
@@ -159,24 +149,73 @@ echo "<h1 class='amt-active-Courses'>{$course_count}</h1>"
 ?>
 
                     </div>
-                    <div class="progress">
-                      <svg>
-                        <circle cx="38" cy="38" r="36"></circle>
-                      </svg>
-                      <div class="number">
-                        <p class="amt-active-Courses-inPercent">61%</p>
-                      </div>
-                      <small class="text-muted">Last 24 Hours</small>
-                    </div>
+                   
+                    <!-- courses -->
                   </div>
+               
                 </div>
+ 
+<div class="dash-Departments">
+                  <!-- depart -->
+                  <span class="material-symbols-outlined">group</span>
+                  <div class="middle">
+          <!-- middle -->
+            <div class="right">
+              <!--  -->
+                      <h3>Active Departments</h3>
+<?php
+ include_once './server/connection.php';
+$sql="SELECT * FROM department";
+$select_all=mysqli_query($con,$sql);
+$depart_count=mysqli_num_rows($select_all);
+
+echo "<h1 class='amt-active-Students'>{$depart_count}</h1>";
+?>
+
+
+                      
+                <!--  -->
+              </div>
+                <!-- middle -->
+                </div>
+
+                 <!-- depart -->
+
+                     </div>
+
+<div class="dash-Batchs">
+                  <!-- depart -->
+                  <span class="material-symbols-outlined">group</span>
+                  <div class="middle">
+          <!-- middle -->
+            <div class="right">
+              <!--  -->
+                      <h3>Active Batchs</h3>
+<?php
+ include_once './server/connection.php';
+$sql="SELECT * FROM student_batchs";
+$select_all=mysqli_query($con,$sql);
+$batch_count=mysqli_num_rows($select_all);
+
+echo "<h1 class='amt-active-Students'>{$batch_count}</h1>";
+?>
+                      
+                <!--  -->
+              </div>
+                <!-- middle -->
+                </div>
+
+                 <!-- depart -->
+
+                     </div>
+                 <!-- insights -->
               </div>
             </div>
 
             
-            <div class="right">
+            <!-- <div class="right">
 
-            </div>
+            </div> -->
 <!-- <<<<<<< HEAD -->
             <!-- <div>
               <H1>Hello World</H1>
@@ -197,10 +236,10 @@ echo "<h1 class='amt-active-Courses'>{$course_count}</h1>"
           ['Data', 'Total'],
 
                           <?php
-$element_text=['Active Instructors','Active Students','Active Courses'];
-$element_count=[$instructor_count,$student_count,$course_count];
+$element_text=['Active Instructors','Active Students','Active Courses','Active Departments','Active Batchs'];
+$element_count=[$instructor_count,$student_count,$course_count,$depart_count,$batch_count];
 
-for($i=0;$i<3;$i++){
+for($i=0;$i<5;$i++){
 
   echo "['{$element_text[$i]}'" .","."{$element_count[$i]}],";
 }
@@ -220,7 +259,7 @@ for($i=0;$i<3;$i++){
             title: '',
             subtitle: '',
          
-          },colors:['#6941c6','#6941c6','#6941c6'],
+          },colors:['#6941c6','#6941c6','#6941c6','#6941c6','#6941c6'],
           
         };
 
