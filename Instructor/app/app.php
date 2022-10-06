@@ -92,8 +92,8 @@ if(isset($_GET['user']))
           <ul class="tabs">
             <li data-tab-target="#to-do" class="active tab"><span class="material-symbols-outlined">checklist</span>To-do list</li>
             <li data-tab-target="#calanders" class="tab"><span class="material-symbols-outlined">calendar_month</span>Calendar</li>
-            <li data-tab-target="#message" class="tab"><span class="material-symbols-outlined">chat</span> <a href="../../ChatApp/">Message</li>
-            <li data-tab-target="#video" class="tab"><span class="material-symbols-outlined">video_chat</span><a href="./Stream/lobby.html">Video</a></li>
+            <li class="tab"><span class="material-symbols-outlined">chat</span> <a href="./Chat/index.php">Message</li>
+            <li class="tab"><span class="material-symbols-outlined">video_chat</span><a href="./Stream/lobby.html">Video</a></li>
           </ul>
           <div class="tab-content">
             <div id="to-do" data-tab-content class="active">

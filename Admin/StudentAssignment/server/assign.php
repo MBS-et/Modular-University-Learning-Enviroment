@@ -14,7 +14,7 @@
     $courseId = $row[0];
     
 
-    $sql1 = "INSERT INTO batch_assignment (assignmentDate,batchNo,courseID,courseName) VALUES ('$date','$batch','$courseId','$course')";
+    $sql1 = "INSERT INTO batch_assignment (assignmentDate,batchNo,courseID) VALUES ('$date','$batch','$courseId')";
     $result2 = mysqli_query($con,$sql1);
 
     header("Location: ../assignment.php?Success");

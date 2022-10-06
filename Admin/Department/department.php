@@ -75,10 +75,6 @@
             <span class="material-symbols-outlined">apps</span>
             <h3>Apps</h3>
           </a>
-          <a href="../settings/settings.php" id="sett">
-            <span class="material-symbols-outlined">settings</span>
-            <h3>Settings</h3>
-          </a>
           <a href="../../login/login.php" id="logout">
             <span class="material-symbols-outlined">logout</span>
             <h3>Logout</h3>
@@ -93,9 +89,6 @@
           <ul class="tabs">
             <li data-tab-target="#add" class="active tab">
               <span class="material-symbols-outlined">add</span>Add
-            </li>
-            <li data-tab-target="#view" class="tab">
-              <span class="material-symbols-outlined">view_list</span>View
             </li>
           </ul>
           <div class="tab-content">
@@ -148,9 +141,7 @@
 
                 <!-- container -->
               </div>
-            </div>
-            <div id="view" data-tab-content>
-            <div class="table-container">
+              <div class="table-container" style="margin-left: 20%; max-height:300px; overflow:hidden;overflow-y:auto;">
               <!-- table container -->
               <table>
                 <thead>
@@ -182,6 +173,9 @@
 
               <!-- table container -->
             </div>
+            </div>
+            <div id="view" data-tab-content>
+            
             </div>
           </div>
         </div>

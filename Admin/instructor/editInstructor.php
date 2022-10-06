@@ -103,10 +103,6 @@ if(isset($_GET['updateid']))
           <span class="material-symbols-outlined">apps</span>
           <h3>Apps</h3>
         </a>
-        <a href="../settings/settings.php" id="sett">
-          <span class="material-symbols-outlined">settings</span>
-          <h3>Settings</h3>
-        </a>
         <a href="../../login/login.php" id="logout">
           <span class="material-symbols-outlined">logout</span>
           <h3>Logout</h3>
