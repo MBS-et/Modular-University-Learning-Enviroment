@@ -240,7 +240,7 @@ input,select {
 section{
 	width: 100%;
 	height: 100vh;
-	background: linear-gradient(-45deg, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #6941c6 50%, #6941c6 62%, #6941c6 75%, #c2b2e5 87%, #f2f2f2 100%);;
+	background: linear-gradient(-45deg, #3f51b1 0%, #5a55ae 13%, #f2f2f2 25%, #f2f2f2 38%, #6941c6 50%, #6941c6 62%, #6941c6 75%, #f2f2f2 87%, #f2f2f2 100%);;
 	background-size: 400% 400%;
 	position: relative;
 	animation: animate 7.5s ease-in-out infinite;

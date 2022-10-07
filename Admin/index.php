@@ -157,7 +157,7 @@ echo "<h1 class='amt-active-Courses'>{$course_count}</h1>"
  
 <div class="dash-Departments">
                   <!-- depart -->
-                  <span class="material-symbols-outlined">group</span>
+                  <span class="material-symbols-outlined">view_list</span>
                   <div class="middle">
           <!-- middle -->
             <div class="right">
@@ -185,7 +185,7 @@ echo "<h1 class='amt-active-Students'>{$depart_count}</h1>";
 
 <div class="dash-Batchs">
                   <!-- depart -->
-                  <span class="material-symbols-outlined">group</span>
+                  <span class="material-symbols-outlined">safety_divider</span>
                   <div class="middle">
           <!-- middle -->
             <div class="right">
@@ -226,7 +226,7 @@ echo "<h1 class='amt-active-Students'>{$batch_count}</h1>";
             
 <!--  -->
 
- <div class="row">
+ <div class="row" style="border-radius: 15px;">
        <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
@@ -269,7 +269,7 @@ for($i=0;$i<5;$i++){
       }
     </script>
 
-    <div id="columnchart_material" style="  padding: 10px;  "></div>
+    <div id="columnchart_material" style="  padding: 10px;border-radius: 15px;"></div>
 
 
           </div>

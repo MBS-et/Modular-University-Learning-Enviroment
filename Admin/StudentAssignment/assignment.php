@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../index.css" />
   <link rel="stylesheet" href="assignment2.css">
   <link rel="stylesheet" href="./assignmentTab.css">
+  <link rel="stylesheet" href="./instructor.css">
   <link rel="stylesheet" href="./Table2.css">
 </head>
 
@@ -83,9 +84,6 @@
     </aside>
     <main>
       <div class="instructors">
-        <h1 class="title">
-          <span class="material-symbols-outlined">groups</span>Instructors
-        </h1>
         <ul class="tabs">
           <li data-tab-target="#add" class="active tab">
             <span class="material-symbols-outlined">assignment_add</span>Assign

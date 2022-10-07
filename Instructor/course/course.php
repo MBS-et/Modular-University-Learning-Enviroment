@@ -64,7 +64,7 @@ if (isset($_POST['upload'])) { // If isset upload button or not
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Courses</title>
+  <title>Instructor</title>
   <!-- google icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <!-- Main Body Css -->
@@ -139,10 +139,6 @@ select {
           <span class="material-symbols-outlined">apps</span>
           <h3>Apps</h3>
         </a>
-        <a href="../settings/settings.php?user=<?php echo $id; ?>" id="sett">
-          <span class="material-symbols-outlined">settings</span>
-          <h3>Settings</h3>
-        </a>
         <a href="../../login/login.php?user=<?php echo $id; ?>" id="logout">
           <span class="material-symbols-outlined">logout</span>
           <h3>Logout</h3>
@@ -211,63 +207,7 @@ select {
                   <tbody>
                     <tr>
                       <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
-                    </tr>
-                    <tr>
-                      <td>Administrator</td>
-                      <td>No class on Monday and Tuesday</td>
+                      <td>We will have meeting in staff pool on OCT-6</td>
                     </tr>
                   </tbody>
                 </table>

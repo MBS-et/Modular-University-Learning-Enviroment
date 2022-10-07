@@ -72,10 +72,6 @@ if (isset($_GET['user'])) {
           <span class="material-symbols-outlined">apps</span>
           <h3 data-text="&nbsp;&nbsp;&nbsp;Apps">&nbsp;&nbsp;&nbsp;Apps</h3>
         </a>
-        <a href="./settings/settings.php?user=<?php echo $id; ?>" id="sett">
-          <span class="material-symbols-outlined">settings</span>
-          <h3 data-text="&nbsp;&nbsp;&nbsp;Settings">&nbsp;&nbsp;&nbsp;Settings</h3>
-        </a>
         <a href="../login/login.php" id="logout">
           <span class="material-symbols-outlined">logout</span>
           <h3 data-text="&nbsp;Logout&nbsp;">&nbsp;Logout&nbsp;</h3>
